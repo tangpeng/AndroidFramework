@@ -1,0 +1,213 @@
+<resources>
+
+    <string name="compress_failed">压缩失败,原因: %1$s</string>
+    <string name="compress_progress">进度: %1$s</string>
+    <string name="compress_result_input_output">input:%1$s,size:%2$s,output:%3$s,size:%4$s</string>
+
+    <string name="app_name">深圳好产品</string>
+    <string name="no_login">未登录</string>
+    <string name="no_more_data">无更多数据</string>
+    <string name="no_set_artName">未设置艺名</string>
+    <string name="pause_no_update">暂时不用</string>
+    <string name="must_update">立刻更新</string>
+    <string name="update_version">更新版本</string>
+
+    <string name="hint_camera_only">没有相机权限,是否前往设置开启</string>
+    <string name="hint_contacts_only">没有通讯录权限,是否前往设置开启</string>
+    <string name="hint_phone_only">没有电话权限,是否前往设置开启</string>
+    <string name="hint_position_only">没有定位权限,是否前往设置开启</string>
+    <string name="hint_permission">请尝试在手机应用权限管理中打开权限</string>
+    <string name="hint_record">没有录音权限,是否前往设置开启</string>
+    <string name="hint_sd_write">没有获取sd卡写入的权限,是否前往设置开启</string>
+
+    <string name="sure">确定</string>
+    <string name="cancel">取消</string>
+    <string name="set">设置</string>
+    <string name="sex_man">男</string>
+    <string name="sex_woman">女</string>
+
+    <string name="home_index">首页</string>
+    <string name="home_information">资讯</string>
+
+    <string name="home_me">我的</string>
+    <string name="network_no_connect">当前网络无连接</string>
+    <string name="set_word">设置密码</string>
+
+    <string name="pass_word_no_only">2次密码输入不一致</string>
+    <string name="intput_again_word">请再次输入密码</string>
+    <string name="skip">跳过</string>
+    <string name="pull_to_refresh_pull_label">下拉刷新</string>
+    <string name="pull_to_refresh_release_label">松开后刷新</string>
+    <string name="pull_to_refresh_refreshing_label">刷新中\u2026</string>
+    <string name="pull_to_refresh_footer_release_label">松开后加载</string>
+    <string name="pull_to_refresh_footer_pull_label">上拉加载更多</string>
+    <string name="pull_to_refresh_footer_refreshing_label">加载中\u2026</string>
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="listview_header_hint_normal">下拉刷新</string>
+    <string name="listview_header_hint_release">释放立即刷新</string>
+
+    <string name="no_banding">未绑定</string>
+    <string name="banding">已绑定</string>
+
+    <string name="video_show">视频秀</string>
+    <string name="video">视频</string>
+    <string name="add_video_show">上传视频</string>
+    <string name="artist_experience">艺人经历</string>
+    <string name="add_artist_experience">添加艺人经历</string>
+    <string name="update_artist_experience">修改艺人经历</string>
+    <string name="person_info">个人信息</string>
+    <string name="phone">手机号码</string>
+    <string name="sex">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;别</string>
+    <string name="brithday">出生日期</string>
+
+
+    <string name="my_code">我的二维码</string>
+    <string name="share_app">分享APP给好友</string>
+    <string name="idcard_approve">身份认证</string>
+    <string name="my_collect">我的收藏</string>
+    <string name="collect">收藏</string>
+    <string name="activity_details">活动详情</string>
+    <string name="no_collect">取消收藏</string>
+    <string name="account_security">账户安全</string>
+    <string name="user_feedback">用户反馈</string>
+    <string name="login_by_word">密码登录</string>
+    <string name="please_input_word">请输入您的登录密码</string>
+    <string name="please_input_veri">请输入验证码</string>
+    <string name="verification_login">验证码登录</string>
+    <string name="region">国际/地区</string>
+    <string name="input_phone">请输入手机号</string>
+    <string name="forget_word">忘记密码</string>
+    <string name="content_is_null">内容不能为空</string>
+    <string name="infomation_detials">资讯详情</string>
+    <string name="search_result">搜索结果</string>
+    <string name="resend">重新发送</string>
+    <string name="re_load">重新加载</string>
+    <string name="new_user">新用户</string>
+    <string name="register">注册</string>
+    <string name="user_other_login">使用第三方账号登录</string>
+    <string name="agree_user_aggressment">我已阅读并同意</string>
+    <string name="china_phone">中国(+86)</string>
+    <string name="user_aggressment">用户协议</string>
+    <string name="login">登录</string>
+    <string name="get_veri">获取验证码</string>
+    <string name="input_veri">请输入验证码</string>
+    <string name="have_account">已有账户，立即</string>
+    <string name="set_word_6">请设置不少于六位的密码</string>
+
+    <string name="search">搜索</string>
+    <string name="intput_your_stage_name">请输入你的艺名</string>
+    <string name="please_select">请选择</string>
+    <string name="please_could_select">可选择</string>
+    <string name="max_six">（最多可选6个）</string>
+    <string name="introduce_your_self">请简单介绍自己，方便于大家认识你！</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="save">保存</string>
+    <string name="height">身高</string>
+    <string name="age_children">儿童</string>
+    <string name="age_young">少年</string>
+    <string name="age_youth">青年</string>
+    <string name="age_middle">中年</string>
+    <string name="age_old">老年</string>
+
+    <string name="max_selec_three">最多可选择3个</string>
+    <string name="city_pinyin">城市中文或者拼音</string>
+    <string name="delete">删除</string>
+
+    <string name="must_submit">立即提交</string>
+    <string name="submit_info">提交信息</string>
+    <string name="photograph">拍照</string>
+    <string name="select_from_album">从相册选择</string>
+
+    <string name="now_start">立刻体验</string>
+    <string name="system_notic">系统通知</string>
+    <string name="about_ours">关于我们</string>
+    <string name="change_language">切换语言</string>
+    <string name="cancel_cache">清除缓存</string>
+    <string name="success_cancel_cache">成功清除缓存</string>
+    <string name="success">完成</string>
+    <string name="exit_login">退出登录</string>
+    <string name="simple_chinese">简体</string>
+    <string name="complex_chinese">繁体</string>
+    <string name="exit_id">确定退出当前账户?</string>
+    <string name="no_save">你还没有保存信息，是否离开?</string>
+    <string name="sure_delete">确定删除?</string>
+    <string name="company_introduce">公司介绍</string>
+    <string name="name">姓&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;名</string>
+    <string name="phone_hint">请填写联系人手机号码</string>
+    <string name="want_become">想&#160;&#160;成&#160;&#160;为</string>
+    <string name="want_become_hint">如演员、模特、童星</string>
+    <string name="sign_become_art">签约成为艺人</string>
+    <string name="feedbake_hint">为了更好的为您服务，您给出的宝贵意见是我们最大的动力来源</string>
+    <string name="update_binding_phone">更改绑定手机号码</string>
+    <string name="binding_phone">绑定手机</string>
+    <string name="veri_phone">验证手机</string>
+    <string name="qq">QQ</string>
+    <string name="weixin">微信</string>
+    <string name="weibo">微博</string>
+    <string name="update_word">修改密码</string>
+    <string name="update">修改</string>
+
+    <string name="hostory_search">历史搜索</string>
+    <string name="hot_search">热门搜索</string>
+
+
+    <string name="requst_fail">数据请求失败</string>
+    <string name="sure_update">确认修改</string>
+
+    <string name="search_country">搜索国家和地区代码</string>
+    <string name="veri_is_not_empty">验证码不能为空</string>
+    <string name="word_is_not_empty">密码不能为空</string>
+    <string name="phone_is_not_empty">手机号码不能为空</string>
+    <string name="please_sure_phone">请输入正确的手机号码</string>
+    <string name="word_out_six">请输入不少于 6 位的密码</string>
+
+    <string name="old_word_is_not_empty">旧密码不能为空</string>
+    <string name="new_word_is_not_empty">新密码不能为空</string>
+    <string name="new_word_6">新密码不能少于6位</string>
+    <string name="new_word_and_old_word">新旧密码不能一致</string>
+
+    <string name="input_old_word">请输入您的旧密码</string>
+    <string name="input_new_word">设置新密码登录</string>
+
+    <string name="please_now_phone">请输入当前手机号</string>
+
+    <string name="loading">加载中...</string>
+
+    <string name="star_price">票&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;价</string>
+    <string name="star_time">演出时间</string>
+    <string name="star_address">演出地点</string>
+
+    <string name="umeng_socialize_qq">QQ好友</string>
+    <string name="umeng_socialize_zone">QQ空间</string>
+    <string name="umeng_socialize_sina">新浪微博</string>
+    <string name="umeng_socialize_wechat">微信好友</string>
+    <string name="umeng_socialize_wechat_friends">朋友圈</string>
+    <string name="share_to">分享至：</string>
+    <string name="share">分享</string>
+
+    <string name="updata_content">更新内容：</string>
+    <string name="no_data">暂无数据</string>
+    <string name="no_collect_data">暂时没有收藏哦~！</string>
+    <string name="no_photo_data">还没有相片哦~！</string>
+    <string name="no_video_data">还没有视频哦~！</string>
+    <string name="no_exprience_data">还没有添加经历哦~！</string>
+    <string name="no_comment">暂无评价~！</string>
+    <string name="no_internet">网络异常~！</string>
+    <string name="no_data_reload">没有数据，点击重新加载~！</string>
+    <string name="no_search_data">搜索不到相关信息~！</string>
+
+    <string name="locationing">定位中</string>
+    <string name="shenzhen">深圳</string>
+    <string name="local">地区</string>
+    <string name="index_role">角色</string>
+    <string name="type">类型</string>
+</resources>

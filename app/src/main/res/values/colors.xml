@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="index_color">#f74e00</color><!--主题色-->
+    <color name="index_color_press">#ba4700</color><!--主题色-->
+    <color name="common_text_color">#333333</color><!--app常规的字体颜色-->
+    <color name="common_text_color_thin">#666666</color><!--常规字体的浅颜色-->
+    <color name="common_text_color_thin_bg">#999999</color><!--常规字体的浅颜色,作为白色字体的背景的-->
+    <color name="message_red_point">#ff0000</color><!--消息红点颜色-->
+    <color name="star_id">#cccccc</color>
+    <color name="cut_off_rule">#ededed</color>
+
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="bottom_text_color">#515151</color>
+    <color name="transparent">#00000000</color>
+    <color name="mediacontroller_bg_pressed">#ff53c1bd</color>
+    <color name="mediacontroller_bg">#99000000</color>
+    <!-- 比较深的文字颜色 -->
+    <color name="common_text_thin">#838383</color>
+    <!-- 比较浅的文字颜色 -->
+
+    <color name="contextbg_click">#F7F7F7</color>
+    <color name="contextbg">#F7F7F7</color>
+    <!--<color name="contextbg">#FFFCFA</color>-->
+    <color name="underline_thin">#EEEEEE</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="gray">#99A1AA</color>
+    <color name="black">#ff000000</color>
+    <color name="star_detail_head">#001932</color>
+
+    <color name="fragment_partingline">#ededed</color>
+    <color name="partingline">#FFFCFA</color>
+    <color name="partinglinedeep">#D9D9D9</color>
+
+    <!--图片边框的颜色  -->
+    <color name="border">#E5E5E5</color>
+    <!-- 普通按下去的颜色 -->
+    <color name="press_color">#E5E8ED</color>
+
+    <color name="listview_item_normal">#ffffff</color>
+    <color name="listview_item_pressed">#d4d4d4</color>
+
+    <color name="infomation_article_title">#535353</color>
+    <color name="infomation_article_time">#aeaeae</color>
+
+    <color name="divider_color">#FFB7B2B2</color>
+
+
+    <color name="under_line">#EEEEEE</color>
+    <color name="title_bg">#f2f2f2</color>
+    <color name="title_bg_thin">#ededed</color>
+    <color name="title_stroke">#dfdfdf</color>
+    <color name="button_stroke">#d7d7d7</color>
+    <color name="gift_bg">#66000000</color>
+    <color name="graydark">#777</color>
+    <color name="white_btn_press">#D2D2D2</color>
+    <color name="item_click_bg_color">#E9EDED</color>
+
+    <color name="common_blue">#2592d3</color>
+    <color name="common_bright_blue">#37AEFF</color>
+    <color name="common_tag_blue">#2fa2fd</color>
+    <color name="common_tag_pink">#fe8ca5</color>
+    <color name="common_tag_green">#1ac67c</color>
+    <color name="common_gray">#b2b2b2</color>
+    <color name="common_line_gray">#cecece</color>
+    <color name="common_font_gray">#aaaaaa</color>
+    <color name="common_black">#2d2d2d</color>
+    <color name="common_yellow">#fed700</color>
+    <color name="color_ffc000">#ffc000</color>
+    <color name="common_tag_orange">#ffb400</color>
+    <color name="common_orange">#fea100</color>
+    <color name="common_ffb400">#ffb400</color>
+    <color name="common_no_click">#ffe65d</color>
+    <color name="common_grading">#585858</color>
+    <color name="common_grad">#FAFAFA</color>
+
+
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_title_head">44sp</dimen>
+    <dimen name="title_hights">45.0dip</dimen>
+    <dimen name="title_hight">45.0dip</dimen>
+    <dimen name="title_hight_underline">46.0dip</dimen>
+    <dimen name="bottom_bar_hight">48.0dip</dimen>
+    <dimen name="cover_bg_height">235dp</dimen>
+    <dimen name="director_cover_bg_height">203dp</dimen>
+
+    <dimen name="size_38">19sp</dimen>
+    <dimen name="size_34">17sp</dimen>
+    <dimen name="size_36">18sp</dimen>
+    <dimen name="size_32">16sp</dimen>
+    <dimen name="size_30">15sp</dimen>
+    <dimen name="size_28">14sp</dimen>
+    <dimen name="size_26">13sp</dimen>
+    <dimen name="size_24">12sp</dimen>
+    <dimen name="size_22">11sp</dimen>
+    <dimen name="size_20">10sp</dimen>
+    <dimen name="size_18">9sp</dimen>
+
+    <!-- body content -->
+
+</resources>

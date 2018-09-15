@@ -1,0 +1,193 @@
+<resources>
+
+    <!-- 设置透明的样式，对话框 -->
+    <style name="MyDialog" parent="@android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/common_yellow</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/common_yellow</item>
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--<item name="android:colorBackgroundCacheHint">@null</item>-->
+        <item name="android:statusBarColor">@color/white</item>
+        <!--<item name="android:windowAnimationStyle">@style/Animation.Activity.Translucent.Style</item>-->
+    </style>
+
+    <attr name="borderRadius" format="dimension" />
+    <attr name="type">
+        <enum name="circle" value="0" />
+        <enum name="round" value="1" />
+    </attr>
+    <declare-styleable name="RoundImageView">
+        <attr name="borderRadius" />
+        <attr name="type" />
+    </declare-styleable>
+
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_outside_color" format="color" />
+        <attr name="border_inside_color" format="color" />
+    </declare-styleable>
+
+    <style name="ll_Set_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@drawable/selector_common_click</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="tvUser_string_select_style">
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingLeft">28dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textColor">@color/common_text_color_thin_bg</item>
+        <item name="android:textSize">@dimen/size_30</item>
+        <item name="android:drawablePadding">9dp</item>
+        <item name="android:textColorHint">@color/common_text_color_thin_bg</item>
+        <item name="android:drawableRight">@drawable/arow_right</item>
+    </style>
+
+    <!-- 底部菜单栏的文字设置 -->
+    <style name="index_bottom_text">
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:layout_marginTop">2dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <!-- 图片的处理-->
+    <style name="img_scaleType">
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <!-- 标题栏的属性 -->
+    <style name="title_rel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_hight_underline</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <!-- 标题栏的属性 -->
+    <style name="title_rel_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_hight</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!-- 标题栏的文字属性 -->
+    <style name="title_word">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/title_hight</item>
+        <item name="android:layout_marginRight">@dimen/title_hight</item>
+        <item name="android:textSize">@dimen/size_34</item>
+    </style>
+
+    <style name="title_word_color_write">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_marginLeft">@dimen/title_hight</item>
+        <item name="android:layout_marginRight">@dimen/title_hight</item>
+        <item name="android:textSize">@dimen/size_34</item>
+    </style>
+
+
+    <style name="tv_person_in_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:drawablePadding">7dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:textSize">@dimen/size_32</item>
+    </style>
+
+    <style name="iv_person_in_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="tv_star_details_info_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">@color/common_text_color_thin</item>
+        <item name="android:textSize">@dimen/size_28</item>
+    </style>
+
+    <style name="tv_star_details_info_input_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">24dp</item>
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:textSize">@dimen/size_28</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+
+    <style name="llUser_report_style">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">42dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+
+    <style name="tvUser_style">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/common_text_color</item>
+        <item name="android:textSize">@dimen/size_30</item>
+    </style>
+
+    <style name="tvUser_style_x">
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="android:layout_marginLeft">3dp</item>
+        <item name="android:layout_width">6dp</item>
+        <item name="android:layout_height">6dp</item>
+    </style>
+
+    <style name="tvUser_string_style">
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColorHint">@color/common_text_color_thin_bg</item>
+        <item name="android:textColor">@color/common_text_color_thin_bg</item>
+        <item name="android:textSize">@dimen/size_30</item>
+    </style>
+
+
+    <style name="tvUser_string_select_become_style">
+        <item name="android:gravity">center_vertical|right</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@color/common_text_color_thin_bg</item>
+        <item name="android:textSize">@dimen/size_30</item>
+        <item name="android:textColorHint">@color/common_text_color_thin_bg</item>
+    </style>
+</resources>

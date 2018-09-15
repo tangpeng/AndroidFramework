@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contextbg"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+    <com.onemore.goodproduct.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llUserSystemNotic"
+            style="@style/ll_Set_style">
+
+            <TextView
+                style="@style/tvUser_style"
+                android:text="@string/system_notic" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchTrack"
+                android:switchMinWidth="60dp"
+                android:gravity="center_vertical"
+                android:switchPadding="10dp"
+                android:typeface="normal" />
+        </LinearLayout>
+
+
+        <include layout="@layout/including_cut_off_rule" />
+
+
+        <LinearLayout
+            android:id="@+id/llUserCache"
+            style="@style/ll_Set_style"
+            android:clickable="true">
+
+            <TextView
+                style="@style/tvUser_style"
+                android:text="@string/cancel_cache" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvUserCache"
+                style="@style/tvUser_string_select_style" />
+        </LinearLayout>
+
+        <include layout="@layout/including_cut_off_rule" />
+
+        <LinearLayout
+            android:id="@+id/llUserLogout"
+            style="@style/ll_Set_style"
+            android:clickable="true">
+
+            <TextView
+                style="@style/tvUser_style"
+                android:text="@string/exit_login" />
+
+            <View
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView style="@style/tvUser_string_select_style" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llBaseTitle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <!-- 为下个布局分配空间 -->
+    <LinearLayout
+        android:id="@+id/scrollContent"
+        android:layout_width="match_parent"
+        android:background="@color/contextbg"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+</LinearLayout>

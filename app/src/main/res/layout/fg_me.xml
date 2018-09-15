@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.onemore.goodproduct.acitivity.MainActivity">
+
+
+    <com.onemore.goodproduct.view.RoundImageView
+        android:id="@+id/ivFgmeHead"
+        style="@style/img_scaleType"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="68dp"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        app:border_inside_color="@color/black"
+        app:border_outside_color="@color/index_color"
+        app:border_thickness="2dp" />
+
+    <Button
+        android:id="@+id/onClickSet"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:text="@string/set" />
+    <Button
+        android:id="@+id/onClickLogin"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_margin="10dp"
+        android:text="@string/login" />
+
+</LinearLayout>
