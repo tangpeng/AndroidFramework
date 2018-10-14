@@ -26,11 +26,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-
 /**
- * Author: tangpeng
- * Time:2017/9/16 11:07
- * Dec:首页
+ * state：首页
+ * date:2018/10/14
+ * code:https://github.com/tangpeng
  */
 public class FragmentIndex extends BaseFragment implements View.OnClickListener, SwipeItemClickListener {
     private static final String TAG = "FRAGMENTINDEX";
@@ -60,13 +59,10 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
         return baseView;
     }
 
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
     }
-
 
     @Override
     public void initData() {

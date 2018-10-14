@@ -92,6 +92,8 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setListener(Context mContext) {
+        setFullStatusBar(true);
+
         mrlMainIndex.setOnClickListener(this);
         mrlMainDirector.setOnClickListener(this);
         mrlMainMe.setOnClickListener(this);

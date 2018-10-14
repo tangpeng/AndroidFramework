@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="false"
     tools:context="com.onemore.goodproduct.acitivity.MainActivity">
 
     <com.onemore.goodproduct.view.TitleBarView
@@ -21,7 +22,6 @@
         <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="fill_parent"
-
             android:layout_height="wrap_content" />
     </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

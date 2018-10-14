@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="162dp"
+    android:clickable="true"
+    android:clipChildren="false"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageView
+        android:id="@+id/ivIndexAnnunciateItem"
+        style="@style/img_scaleType"
+        android:layout_marginLeft="4dp"
+        android:src="@drawable/ic_no_data_index"
+        android:layout_marginRight="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:clickable="false" />
+</RelativeLayout>

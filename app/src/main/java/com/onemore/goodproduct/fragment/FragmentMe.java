@@ -56,8 +56,8 @@ public class FragmentMe extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void initData() {
+        ivFgmeHead.setImageResource(R.mipmap.ic_launcher);
     }
-
 
     @Override
     public void setListener(Context mContext) {
