@@ -40,8 +40,19 @@ public class ComParamContact {
     }
 
     public final static class Login {
-        public final static String PATH = "/v1/account/login";
-        public final static String ACCOUNT = "account";
+        public final static String PATH = "/user/login";
+        public final static String ACCOUNT = "username";
         public final static String PASSWORD = "password";
     }
+
+    public final static class Register {
+        public final static String PATH = "/user/register";
+        public final static String ACCOUNT = "username";
+        public final static String PASSWORD = "password";
+        public final static String REPASSWORD = "repassword";
+    }
+
+    public final static String INDEXPATH = "/banner/json";
+
+    public final static String ARTICLE_LIST = "/article/list/1/json";
 }

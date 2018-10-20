@@ -3,15 +3,29 @@ package com.onemore.goodproduct.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.onemore.goodproduct.R;
+import com.onemore.goodproduct.adapter.FindAdapter;
 import com.onemore.goodproduct.adapter.IndexLunboAdapter;
+import com.onemore.goodproduct.adapter.MainAdapter;
+import com.onemore.goodproduct.bean.IndexListBean;
 import com.onemore.goodproduct.bean.IndexLunboAdvBean;
+import com.onemore.goodproduct.mvpview.MvpUserActivityView;
+import com.onemore.goodproduct.presenter.impl.UserPresenter;
+import com.onemore.goodproduct.util.MyLog;
+import com.onemore.goodproduct.util.Tools;
+import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
+import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
+import com.yanzhenjie.recyclerview.swipe.widget.DefaultItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,20 +40,22 @@ import butterknife.Unbinder;
  * date:2018/8/26
  * code:https://github.com/tangpeng
  */
-public class FragmentFind extends BaseFragment implements View.OnClickListener {
+public class FragmentFind extends BaseFragment implements View.OnClickListener, SwipeItemClickListener, MvpUserActivityView {
     private static final String TAG = "FragmentFind";
-    @BindView(R.id.mLoopViewPager)
-    com.onemore.goodproduct.view.LoopViewPager mLoopViewPager;
-    @BindView(R.id.llviewpagerIndex)
-    LinearLayout llviewpagerIndex;
+    @BindView(R.id.recycler_view)
+    SwipeMenuRecyclerView mRecyclerView;
+    @BindView(R.id.refresh_layout)
+    SwipeRefreshLayout refreshLayout;
+
     Unbinder unbinder;
     private View baseView;
 
-    private IndexLunboAdapter mMyAdapter;
+    protected FindAdapter mAdapter;
+    protected List<IndexListBean> mDataList;
 
-    private List<IndexLunboAdvBean> list = new ArrayList<>();//图片集合
-    private List<View> views = new ArrayList<View>();//点的集合
-    private LinearLayout.LayoutParams paramsL = new LinearLayout.LayoutParams(10, 10);//设置每个点容器大小
+    //mpv的框架,
+    UserPresenter presenter;
+
     /**
      * Tab标题
      */
@@ -62,56 +78,26 @@ public class FragmentFind extends BaseFragment implements View.OnClickListener {
 
     @Override
     public void initData() {
-        IndexLunboAdvBean image = new IndexLunboAdvBean();
-        image.setUrl("http://news.cnhubei.com/xw/yl/201405/W020140530279662501386.jpg");
-        IndexLunboAdvBean image2 = new IndexLunboAdvBean();
-        image2.setUrl("http://img0.imgtn.bdimg.com/it/u=3688010775,3049294081&fm=21&gp=0.jpg");
-        IndexLunboAdvBean image3 = new IndexLunboAdvBean();
-        image3.setUrl("http://npic7.edushi.com/cn/zixun/zh-chs/2015-09/09/4f4842aa50924e2bb6cedff42d09ef4a.png");
-        list.add(image);
-        list.add(image2);
-        list.add(image3);
-
+        presenter = new UserPresenter(this);
+        presenter.attach(getActivity());
+        mAdapter = new FindAdapter(getActivity());
+        mDataList = new ArrayList<>();
     }
 
 
     @Override
     public void setListener(Context mContext) {
-        //图片集合，从后台直接返回，前端接收
-        initMyPageAdapter(list);
-        mLoopViewPager.autoLoop(true);
-        //设置监听
-        mLoopViewPager.setOnPageChangeListener(getListener());
+        mRecyclerView.setLayoutManager(createLayoutManager());
+        mRecyclerView.addItemDecoration(createItemDecoration());
+        mRecyclerView.setSwipeItemClickListener(this);
+
+        refreshLayout.setOnRefreshListener(mRefreshListener); // 刷新监听。
+        mRecyclerView.setLoadMoreListener(mLoadMoreListener); // 加载更多的监听。
+        mRecyclerView.setAdapter(mAdapter);
+
 
     }
 
-    @Override
-    public void widgetClick(View v) {
-
-    }
-    /***
-     * 初始化viewpager适配器
-     *
-     * @param imageBeanList
-     */
-
-    private void initMyPageAdapter(List<IndexLunboAdvBean> imageBeanList) {
-        initPoint(imageBeanList);
-        if (mMyAdapter == null) {
-            mMyAdapter = new IndexLunboAdapter(getActivity(), imageBeanList);
-            if (mLoopViewPager != null) {
-                mLoopViewPager.setAdapter(mMyAdapter);
-            }
-
-        } else {
-            mMyAdapter.upData(imageBeanList);
-        }
-
-    }
-    @Override
-    public void doBusiness() {
-
-    }
 
     @Override
     public void onDestroy() {
@@ -125,61 +111,88 @@ public class FragmentFind extends BaseFragment implements View.OnClickListener {
     }
 
 
-    /***
-     * 初始化点
-     * 可以根据图片多少自动增加点
-     */
-    private void initPoint(List<IndexLunboAdvBean> list) {
-        views.clear();
-        llviewpagerIndex.removeAllViews();
-        for (int i = 0; i < list.size(); i++) {
-            View view = new View(getActivity());
-            //设置点的间距
-            paramsL.setMargins(5, 0, 0, 0);
-            view.setLayoutParams(paramsL);//设置点的颜色，默认从第一个开始
-            if (i == 0) {
-                view.setBackgroundResource(R.drawable.cricle_index_color);
-            } else {
-                view.setBackgroundResource(R.drawable.cricle_gray_color);
-            }
-            views.add(view);
-            llviewpagerIndex.addView(view);
-        }
+    protected RecyclerView.ItemDecoration createItemDecoration() {
+        return new DefaultItemDecoration(ContextCompat.getColor(getActivity(), R.color.divider_color));
     }
 
-    /***
-     * viewpager监听
-     *
-     * @return
-     */
-    private ViewPager.OnPageChangeListener getListener() {
-        return new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageSelected(int position) {
-                //相应图片被选中，相应点变成被选中色
-                if (views.size() != 0 && views.get(position) != null) {
-                    for (int i = 0; i < views.size(); i++) {
-                        if (i == position) {
-                            views.get(i).setBackgroundResource(R.drawable.cricle_index_color);
-                        } else {
-                            views.get(i).setBackgroundResource(R.drawable.cricle_gray_color);
-                        }
-                    }
+    protected RecyclerView.LayoutManager createLayoutManager() {
+        return new LinearLayoutManager(getActivity());
+    }
 
+
+    @Override
+    public void onItemClick(View itemView, int position) {
+        Tools.showToast(getActivity(), "第" + position + "个");
+    }
+
+    @Override
+    public void widgetClick(View v) {
+
+    }
+
+    @Override
+    public void doBusiness() {
+        MyLog.i(TAG, "doBusiness");
+        presenter.getFindData(getActivity());
+    }
+
+
+    /**
+     * 刷新。
+     */
+    private SwipeRefreshLayout.OnRefreshListener mRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            mRecyclerView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    refreshLayout.setRefreshing(false);
+//                    loadData();
                 }
+            }, 1000); // 延时模拟请求服务器。
+        }
+    };
 
-            }
+    /**
+     * 加载更多。
+     */
+    private SwipeMenuRecyclerView.LoadMoreListener mLoadMoreListener = new SwipeMenuRecyclerView.LoadMoreListener() {
+        @Override
+        public void onLoadMore() {
+            mRecyclerView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
 
-            @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {
+                    // notifyItemRangeInserted()或者notifyDataSetChanged().
+//                    mAdapter.notifyItemRangeInserted(mDataList.size() - strings.size(), strings.size());
+                    // 请求数据，并更新数据源操作。
+                    mAdapter.notifyDataSetChanged();
+                    // 数据完更多数据，一定要调用这个方法。
+                    // 第一个参数：表示此次数据是否为空。
+                    // 第二个参数：表示是否还有更多数据。
+                    mRecyclerView.loadMoreFinish(false, true);
 
-            }
+                    // 如果加载失败调用下面的方法，传入errorCode和errorMessage。
+                    // errorCode随便传，你自定义LoadMoreView时可以根据errorCode判断错误类型。
+                    // errorMessage是会显示到loadMoreView上的，用户可以看到。
+                    // mRecyclerView.loadMoreError(0, "请求网络失败");
+                }
+            }, 1000);
+        }
+    };
 
-            @Override
-            public void onPageScrollStateChanged(int arg0) {
+    @Override
+    public void MVPFail(String data) {
 
-            }
-        };
     }
 
+    @Override
+    public void MVPSuccess(Object data) {
+        MyLog.i(TAG, "MVPSuccess=" + data.toString());
+        mDataList = (List<IndexListBean>) data;
+        MyLog.i(TAG, "mDataList=" + mDataList.get(0).getTitle());
+
+        mAdapter.notifyDataSetChanged(mDataList);
+        mRecyclerView.loadMoreFinish(false, true);
+    }
 }

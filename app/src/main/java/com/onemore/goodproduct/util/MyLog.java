@@ -8,7 +8,7 @@ import android.util.Log;
  */
 public class MyLog {
 
-    public static final boolean DEBUG = false;
+    public static final boolean DEBUG = true;
 
     //默认的TAG，建议后面加下划线
     private static final String DEFAULT_TAG = "tag_";

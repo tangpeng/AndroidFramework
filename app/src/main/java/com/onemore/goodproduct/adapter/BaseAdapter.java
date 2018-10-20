@@ -20,6 +20,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by YanZhenjie on 2017/10/3.
@@ -36,6 +37,6 @@ public abstract class BaseAdapter<VH extends RecyclerView.ViewHolder> extends Re
         return mInflater;
     }
 
-    public abstract void notifyDataSetChanged(List<String> dataList);
+    public abstract void notifyDataSetChanged(Object dataList);
 
 }

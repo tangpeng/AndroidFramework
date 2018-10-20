@@ -7,7 +7,6 @@ import android.support.multidex.MultiDexApplication;
 
 import com.bumptech.glide.request.target.ViewTarget;
 import com.onemore.goodproduct.constant.AppConstant;
-import com.onemore.goodproduct.handler.CrashHandler;
 import com.onemore.goodproduct.util.SystemInfoUtils;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.cache.converter.SerializableDiskConverter;
@@ -49,12 +48,13 @@ public class App extends MultiDexApplication {
          * 当出现异常，退出app
          *  * UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
          */
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(getApplicationContext());
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(getApplicationContext());
 
-        EasyHttp.init(this);
         //这里涉及到安全我把url去掉了，demo都是调试通的
         String Url = "http://www.xxx.com";
+        EasyHttp.init(this);
+
         //设置请求头
         HttpHeaders headers = new HttpHeaders();
         headers.put("User-Agent", SystemInfoUtils.getUserAgent(this, AppConstant.APPID));
@@ -78,8 +78,8 @@ public class App extends MultiDexApplication {
                 //.addConverterFactory(GsonConverterFactory.create(gson))//本框架没有采用Retrofit的Gson转化，所以不用配置
                 .addCommonHeaders(headers)//设置全局公共头
                 .addCommonParams(params);//设置全局公共参数
-                // .addInterceptor(new CustomSignInterceptor());//添加参数签名拦截器
-                //.addInterceptor(new HeTInterceptor());//处理自己业务的拦截器
+//                .addInterceptor(new CustomSignInterceptor());//添加参数签名拦截器
+        //.addInterceptor(new HeTInterceptor());//处理自己业务的拦截器
 
         ViewTarget.setTagId(R.id.glide_tag);//glide和TAG有冲突
     }

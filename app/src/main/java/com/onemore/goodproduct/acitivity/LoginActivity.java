@@ -2,6 +2,7 @@ package com.onemore.goodproduct.acitivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -14,6 +15,9 @@ import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.mvpview.MvpUserActivityView;
 import com.onemore.goodproduct.presenter.impl.UserPresenter;
 import com.onemore.goodproduct.util.Tools;
+import com.zhouyou.http.EasyHttp;
+import com.zhouyou.http.callback.SimpleCallBack;
+import com.zhouyou.http.exception.ApiException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,7 +62,7 @@ public class LoginActivity extends BaseActivity implements MvpUserActivityView {
 
     public void initDataMvp() {
         presenter = new UserPresenter(this);
-        presenter.attach(this);//之前忘记了，搞了好久，后来查看源代码才知道
+        presenter.attach(this);
     }
 
     @Override
@@ -69,7 +73,6 @@ public class LoginActivity extends BaseActivity implements MvpUserActivityView {
 
     @Override
     public void initParms(Bundle parms) {
-
     }
 
     @Override
@@ -84,8 +87,9 @@ public class LoginActivity extends BaseActivity implements MvpUserActivityView {
 
     @Override
     public void doBusiness(Context mContext) {
-
     }
+
+
 
     @Override
     public void MVPFail(String data) {
@@ -93,10 +97,9 @@ public class LoginActivity extends BaseActivity implements MvpUserActivityView {
     }
 
     @Override
-    public void MVPSuccess(String data) {
+    public void MVPSuccess(Object data) {
         Tools.showToast(context, "data=" + data);
         finish();
-
     }
 }
 

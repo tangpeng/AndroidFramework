@@ -21,8 +21,8 @@ public class AppConstant {
     public static void main(String[] args) {
         String json = "{\n" +
                 "    \"data\": 1468993603787,\n" +
-                "    \"code\": 100010104,\n" +
-                "    \"msg\": \"timestamp过期\"\n" +
+                "    \"errorCode\": 100010104,\n" +
+                "    \"errorMsg\": \"timestamp过期\"\n" +
                 "}";
 
         Gson gson = new Gson();

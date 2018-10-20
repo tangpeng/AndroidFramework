@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    tools:context="com.onemore.goodproduct.acitivity.MainActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+        <com.onemore.goodproduct.view.LoopViewPager
+            android:id="@+id/mLoopViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:cacheColorHint="@android:color/white"
+            android:divider="@null"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent" />
+        <LinearLayout
+            android:id="@+id/llviewpagerIndex"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="horizontal" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -21,9 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-
 import com.onemore.goodproduct.R;
-import com.onemore.goodproduct.bean.IndexBean;
 import com.onemore.goodproduct.bean.IndexListBean;
 import com.onemore.goodproduct.util.MyLog;
 
@@ -33,20 +31,21 @@ import java.util.List;
 /**
  * Created by YOLANDA on 2016/7/22.
  */
-public class MainAdapter extends BaseAdapter<MainAdapter.ViewHolder> {
+public class FindAdapter extends BaseAdapter<FindAdapter.ViewHolder> {
     private final String TAG="MainAdapter";
-    private List<IndexBean.DatasBean> mDataList=new ArrayList<>();
+    private List<IndexListBean> mDataList=new ArrayList<>();
 
-    public MainAdapter(Context context) {
+    public FindAdapter(Context context) {
         super(context);
     }
 
     @Override
     public void notifyDataSetChanged(Object dataList) {
-        this.mDataList = (List<IndexBean.DatasBean>) dataList;
+        this.mDataList = (List<IndexListBean>) dataList;
         MyLog.i(TAG,"mDataList="+mDataList.size());
         super.notifyDataSetChanged();
     }
+
 
     @Override
     public int getItemCount() {
