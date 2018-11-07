@@ -1,5 +1,6 @@
 
 # 如果您觉得本项目对你有用，请随手star，谢谢
+个人主页：https://www.jianshu.com/u/521b2b15caba
 
 # AndroidFramework
 android 项目框架搭建，直接进入开发，集成Rxjava+ReTrofit+okHttp+MVP+glide， baseAdapter，baseActivity，权限管理等
