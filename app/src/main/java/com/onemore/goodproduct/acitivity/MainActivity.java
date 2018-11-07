@@ -1,6 +1,5 @@
 package com.onemore.goodproduct.acitivity;
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +11,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.apeng.permissions.EsayPermissions;
+import com.apeng.permissions.OnPermission;
+import com.apeng.permissions.Permission;
 import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.fragment.FragmentFind;
 import com.onemore.goodproduct.fragment.FragmentIndex;
@@ -20,11 +22,11 @@ import com.onemore.goodproduct.util.Constans;
 import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
 import com.onemore.goodproduct.view.TitleBarView;
-import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.functions.Consumer;
 /**
  * state：深圳好产品
  * date:2018/9/11
@@ -63,8 +65,6 @@ public class MainActivity extends BaseActivity {
     private FragmentMe mFragmentMe;//2
 
 
-    RxPermissions rxPermissions;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +79,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initData(Context mContext) {
         fManager = getSupportFragmentManager();
-        rxPermissions = new RxPermissions(this);
 
 
 
@@ -257,12 +256,29 @@ public class MainActivity extends BaseActivity {
     }
 
     public void getPermissions() {
-        rxPermissions.request(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                .subscribe(new Consumer<Boolean>() {
+
+        EsayPermissions.with(this)
+                .constantRequest() //可设置被拒绝后继续申请，直到用户授权或者永久拒绝
+//                .permission(Permission.SYSTEM_ALERT_WINDOW, Permission.REQUEST_INSTALL_PACKAGES) //支持请求6.0悬浮窗权限8.0请求安装权限
+                .permission(Permission.WRITE_EXTERNAL_STORAGE)
+                .request(new OnPermission() {
                     @Override
-                    public void accept(Boolean aBoolean) throws Exception {
-                        if (aBoolean) {
+                    public void hasPermission(List<String> granted, boolean isAll) {
+                        if (isAll) {
                             Tools.showToast(context, "权限获取成功");
+                        } else {
+                            Tools.showToast(context, "获取权限成功，部分权限未正常授予");
+                        }
+                    }
+
+                    @Override
+                    public void noPermission(List<String> denied, boolean quick) {
+                        if (quick) {
+                            Tools.showToast(context, "被永久拒绝授权，请手动授予权限");
+                            //如果是被永久拒绝就跳转到应用权限系统设置页面
+                            EsayPermissions.gotoPermissionSettings(context);
+                        } else {
+                            Tools.showToast(context, "获取权限失败");
                         }
                     }
                 });

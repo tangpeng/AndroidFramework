@@ -237,6 +237,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
     @Override
     public void MVPSuccess(Object data) {
+
         IndexBean mindexBean= (IndexBean) data;
         mDataList=mindexBean.getDatas();
         MyLog.i(TAG, "MVPSuccess=" + mDataList.toString());

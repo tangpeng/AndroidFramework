@@ -131,7 +131,8 @@ public class UserPresenter extends BasePresenter {
     /**
      * state：获取首页的数据
      * date:2018/10/14
-     * code:https://github.com/tangpeng
+     * code:也可以选择泛型处理返回的数据
+     * https://www.jianshu.com/p/9bcf932277b9
      */
     public void getIndexData(final Context context) {
         IProgressDialog mProgressDialog = new IProgressDialog() {
@@ -147,39 +148,24 @@ public class UserPresenter extends BasePresenter {
                 .baseUrl("http://www.wanandroid.com")
                 .sign(false)
                 .timeStamp(false)
-                .execute(new ProgressDialogCallBack<IndexBean>( mProgressDialog,true,true) {
+                .execute(new ProgressDialogCallBack<IndexBean>(mProgressDialog, true, true) {
                     @Override
                     public void onError(ApiException e) {
                         super.onError(e);
-                        MyLog.i(TAG,"e="+e.getMessage());
+                        MyLog.i(TAG, "e=" + e.getMessage());
                     }
+
                     @Override
                     public void onSuccess(IndexBean Object) {
                         MyLog.i(TAG, "ApiResult=" + Object.toString());
                         activityView.MVPSuccess(Object);
                     }
                 });
-
-//        MyLog.i(TAG, "getIndexData");
-//        EasyHttp.post("/banner/json")
-//                .baseUrl("http://www.wanandroid.com")
-//                .accessToken(false)
-//                .timeStamp(false)
-//                .execute(new SimpleCallBack<List<IndexListBean>>() {
-//                    @Override
-//                    public void onError(ApiException e) {
-//                        MyLog.i(TAG, "e=" + e.getMessage());
-//                    }
-//
-//                    @Override
-//                    public void onSuccess(List<IndexListBean> indexListBeen) {
-//                        MyLog.i(TAG, "mIndexListBean=" + indexListBeen.get(0).getTitle().toString());
-//                        activityView.MVPSuccess(response.toString());
-//                    }
-//
-//                });
+//                 * code:也可以选择泛型处理返回的数据，具体使用:
+//                * https://www.jianshu.com/p/9bcf932277b9
 
     }
+
     public void getFindData(final Context context) {
         IProgressDialog mProgressDialog = new IProgressDialog() {
             @Override
@@ -194,11 +180,11 @@ public class UserPresenter extends BasePresenter {
                 .baseUrl("http://www.wanandroid.com")
                 .sign(false)
                 .timeStamp(false)
-                .execute(new ProgressDialogCallBack<List<IndexListBean>>( mProgressDialog,true,true) {
+                .execute(new ProgressDialogCallBack<List<IndexListBean>>(mProgressDialog, true, true) {
                     @Override
                     public void onError(ApiException e) {
                         super.onError(e);
-                        MyLog.i(TAG,"e="+e.getMessage());
+                        MyLog.i(TAG, "e=" + e.getMessage());
                     }
 
                     @Override

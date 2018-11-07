@@ -13,12 +13,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.apeng.permissions.EsayPermissions;
+import com.apeng.permissions.OnPermission;
+import com.apeng.permissions.Permission;
 import com.bumptech.glide.Glide;
 import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.util.CleanMessageUtil;
 import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
-import com.tbruyelle.rxpermissions2.RxPermissions;
+
+import java.util.List;
 
 import butterknife.BindView;
 import io.reactivex.annotations.NonNull;
@@ -42,7 +46,6 @@ public class SetActivity extends BaseActivity {
     LinearLayout llUserLogout;
     private Context context = SetActivity.this;
 
-    RxPermissions rxPermissions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,6 @@ public class SetActivity extends BaseActivity {
     @Override
     public void initData(Context mContext) {
         MyLog.i(TAG, "initData");
-        rxPermissions = new RxPermissions(this);
         try {
             tvUserCache.setText(CleanMessageUtil.getTotalCacheSize(context) + "");
         } catch (Exception e) {
@@ -85,22 +87,36 @@ public class SetActivity extends BaseActivity {
     public void widgetClick(View v) {
         switch (v.getId()) {
             case R.id.llUserCache:
-                rxPermissions.request(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        .subscribe(new Consumer<Boolean>() {
+                EsayPermissions.with(this)
+                        .constantRequest() //可设置被拒绝后继续申请，直到用户授权或者永久拒绝
+//                .permission(Permission.SYSTEM_ALERT_WINDOW, Permission.REQUEST_INSTALL_PACKAGES) //支持请求6.0悬浮窗权限8.0请求安装权限
+                        .permission(Permission.WRITE_EXTERNAL_STORAGE)
+                        .request(new OnPermission() {
                             @Override
-                            public void accept(@NonNull Boolean aBoolean) throws Exception {
-                                if(aBoolean){
+                            public void hasPermission(List<String> granted, boolean isAll) {
+                                if (isAll) {
                                     Tools.showToast(context, getString(R.string.success_cancel_cache));
                                     // 必须在UI线程中调用
                                     Glide.get(context).clearMemory();
                                     //必须在子线程中调用，建议同时clearMemory()
                                     clearDiskCache();
+                                } else {
+                                    Tools.showToast(context, "获取权限成功，部分权限未正常授予");
+                                }
+                            }
 
-                                }else {
-                                    Toast.makeText(context, "权限获取失败", Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void noPermission(List<String> denied, boolean quick) {
+                                if (quick) {
+                                    Tools.showToast(context, "被永久拒绝授权，请手动授予权限");
+                                    //如果是被永久拒绝就跳转到应用权限系统设置页面
+                                    EsayPermissions.gotoPermissionSettings(context);
+                                } else {
+                                    Tools.showToast(context, "获取权限失败");
                                 }
                             }
                         });
+
 
                 break;
             case R.id.llUserLogout:
