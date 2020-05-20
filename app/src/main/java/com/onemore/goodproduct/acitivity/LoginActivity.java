@@ -2,7 +2,6 @@ package com.onemore.goodproduct.acitivity;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -15,9 +14,7 @@ import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.mvpview.MvpUserActivityView;
 import com.onemore.goodproduct.presenter.impl.UserPresenter;
 import com.onemore.goodproduct.util.Tools;
-import com.zhouyou.http.EasyHttp;
-import com.zhouyou.http.callback.SimpleCallBack;
-import com.zhouyou.http.exception.ApiException;
+import com.onemore.goodproduct.view.TitleBarView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,6 +25,8 @@ import butterknife.ButterKnife;
  * code:https://github.com/tangpeng
  */
 public class LoginActivity extends BaseActivity implements MvpUserActivityView {
+    @BindView(R.id.title_bar)
+    TitleBarView titleBar;
     private Context context = LoginActivity.this;
 
     @BindView(R.id.login_progress)
@@ -47,12 +46,10 @@ public class LoginActivity extends BaseActivity implements MvpUserActivityView {
     UserPresenter presenter;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ButterKnife.bind(this);
-
     }
 
     @Override
@@ -88,7 +85,6 @@ public class LoginActivity extends BaseActivity implements MvpUserActivityView {
     @Override
     public void doBusiness(Context mContext) {
     }
-
 
 
     @Override

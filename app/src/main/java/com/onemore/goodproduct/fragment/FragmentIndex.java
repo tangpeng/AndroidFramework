@@ -1,6 +1,7 @@
 package com.onemore.goodproduct.fragment;
 
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.google.gson.Gson;
@@ -21,6 +23,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.onemore.goodproduct.R;
+import com.onemore.goodproduct.acitivity.WebSocketActivity;
 import com.onemore.goodproduct.adapter.IndexLunboAdapter;
 import com.onemore.goodproduct.adapter.MainAdapter;
 import com.onemore.goodproduct.bean.IndexBean;
@@ -29,6 +32,7 @@ import com.onemore.goodproduct.bean.IndexLunboAdvBean;
 import com.onemore.goodproduct.bean.IndexLunboBean;
 import com.onemore.goodproduct.mvpview.MvpUserActivityView;
 import com.onemore.goodproduct.presenter.impl.UserPresenter;
+import com.onemore.goodproduct.util.ActivityManagers;
 import com.onemore.goodproduct.util.GsonTools;
 import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
@@ -73,6 +77,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
     private View headView;
     LoopViewPager mLoopViewPager;
     LinearLayout llviewpagerIndex;
+    Button webSocket;
 
     protected MainAdapter mAdapter;
     protected List<IndexBean.DatasBean> mDataList;
@@ -133,12 +138,13 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
         refreshLayout.setOnRefreshListener(mRefreshListener); // 刷新监听。
         mRecyclerView.setLoadMoreListener(mLoadMoreListener); // 加载更多的监听。
         headView=getActivity().getLayoutInflater().inflate(R.layout.including_head_index,null);
+        webSocket=headView.findViewById(R.id.webSocket);
         mLoopViewPager=headView.findViewById(R.id.mLoopViewPager);
         llviewpagerIndex=headView.findViewById(R.id.llviewpagerIndex);
         mRecyclerView.addHeaderView(headView);
         mRecyclerView.setAdapter(mAdapter);
 
-
+        webSocket.setOnClickListener(this);
 
         //图片集合，从后台直接返回，前端接收
         initMyPageAdapter(list);
@@ -165,7 +171,11 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
     @Override
     public void widgetClick(View v) {
-
+        switch (v.getId()){
+            case R.id.webSocket:
+                ActivityManagers.WebSocketActivity(getActivity());
+                break;
+        }
     }
 
     @Override

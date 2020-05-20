@@ -27,6 +27,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 /**
  * state：深圳好产品
  * date:2018/9/11
@@ -38,24 +39,28 @@ public class MainActivity extends BaseActivity {
     TitleBarView titleBar;
     @BindView(R.id.content)
     FrameLayout content;
+
     @BindView(R.id.ivMainIndex)
     ImageView mivMainIndex;
     @BindView(R.id.tvMainIndex)
     TextView mtvMainIndex;
     @BindView(R.id.rlMainIndex)
     RelativeLayout mrlMainIndex;
+
     @BindView(R.id.ivMainDirector)
     ImageView mivMainDirector;
     @BindView(R.id.tvMainDirector)
-    TextView mtvMainDirector;
+    TextView tvMainDirector;
     @BindView(R.id.rlMainDirector)
     RelativeLayout mrlMainDirector;
+
     @BindView(R.id.ivMainMe)
-    ImageView mivMainMe;
+    ImageView ivMainMe;
     @BindView(R.id.tvMainMe)
-    TextView mtvMainMe;
+    TextView tvMainMe;
     @BindView(R.id.rlMainMe)
     RelativeLayout mrlMainMe;
+
     private Context context = MainActivity.this;
 
 
@@ -79,9 +84,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initData(Context mContext) {
         fManager = getSupportFragmentManager();
-
-
-
     }
 
     @Override
@@ -158,7 +160,7 @@ public class MainActivity extends BaseActivity {
                 break;
             case 1://
                 mivMainDirector.setImageResource(R.drawable.ic_home_jztg_pressed);
-                mtvMainDirector.setTextColor(getResources().getColor(R.color.index_color));
+                tvMainDirector.setTextColor(getResources().getColor(R.color.index_color));
                 if (mFragmentFind == null) {
                     mFragmentFind = new FragmentFind();
                     transaction.add(R.id.content, mFragmentFind);
@@ -168,8 +170,8 @@ public class MainActivity extends BaseActivity {
                 MyLog.i(TAG, "剧组通告");
                 break;
             case 2:
-                mivMainMe.setImageResource(R.drawable.ic_nav_wd_pressed);
-                mtvMainMe.setTextColor(getResources().getColor(R.color.index_color));
+                ivMainMe.setImageResource(R.drawable.ic_nav_wd_pressed);
+                tvMainMe.setTextColor(getResources().getColor(R.color.index_color));
                 if (mFragmentMe == null) {
                     mFragmentMe = new FragmentMe();
                     transaction.add(R.id.content, mFragmentMe);
@@ -209,11 +211,11 @@ public class MainActivity extends BaseActivity {
                 R.color.common_text_color));
 
         mivMainDirector.setImageResource(R.drawable.ic_home_jztg_nor);
-        mtvMainDirector.setTextColor(getResources().getColor(
+        tvMainDirector.setTextColor(getResources().getColor(
                 R.color.common_text_color));
 
-        mivMainMe.setImageResource(R.drawable.ic_nav_wd_nor);
-        mtvMainMe.setTextColor(getResources().getColor(
+        ivMainMe.setImageResource(R.drawable.ic_nav_wd_nor);
+        tvMainMe.setTextColor(getResources().getColor(
                 R.color.common_text_color));
 
     }

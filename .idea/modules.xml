@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GoodProduct.iml" filepath="$PROJECT_DIR$/GoodProduct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidFramework.iml" filepath="$PROJECT_DIR$/AndroidFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/recyclerview-swipe/recyclerview-swipe.iml" filepath="$PROJECT_DIR$/recyclerview-swipe/recyclerview-swipe.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxeasyhttp/rxeasyhttp.iml" filepath="$PROJECT_DIR$/rxeasyhttp/rxeasyhttp.iml" />

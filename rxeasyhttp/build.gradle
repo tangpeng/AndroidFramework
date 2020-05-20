@@ -1,15 +1,14 @@
 apply plugin: 'com.android.library'
 //apply plugin: 'me.tatarka.retrolambda'
 
-def cfg = rootProject.ext.android
 
 android {
-    compileSdkVersion cfg.compileSdkVersion
-    buildToolsVersion cfg.buildToolsVersion
+    compileSdkVersion 29
+    buildToolsVersion "29.0.0"
 
     defaultConfig {
-        minSdkVersion cfg.minSdkVersion
-        targetSdkVersion cfg.targetSdkVersion
+        minSdkVersion 26
+        targetSdkVersion 29
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

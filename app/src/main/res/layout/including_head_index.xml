@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:fitsSystemWindows="true"
     android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context="com.onemore.goodproduct.acitivity.MainActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="180dp">
+
         <com.onemore.goodproduct.view.LoopViewPager
             android:id="@+id/mLoopViewPager"
             android:layout_width="match_parent"
@@ -17,6 +21,7 @@
             android:divider="@null"
             android:fadingEdge="none"
             android:listSelector="@android:color/transparent" />
+
         <LinearLayout
             android:id="@+id/llviewpagerIndex"
             android:layout_width="match_parent"
@@ -25,4 +30,14 @@
             android:gravity="center"
             android:orientation="horizontal" />
     </RelativeLayout>
-</android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/webSocket"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="20dp"
+        android:text="websocket"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+</LinearLayout>
