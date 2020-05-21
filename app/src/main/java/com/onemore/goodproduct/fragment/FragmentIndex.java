@@ -118,11 +118,11 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
         mDataList = new ArrayList<>();
 
         IndexLunboAdvBean image = new IndexLunboAdvBean();
-        image.setUrl("http://news.cnhubei.com/xw/yl/201405/W020140530279662501386.jpg");
+        image.setUrl("https://img.gtsuat.com/source/public/info/other/6.jpg");
         IndexLunboAdvBean image2 = new IndexLunboAdvBean();
-        image2.setUrl("http://img0.imgtn.bdimg.com/it/u=3688010775,3049294081&fm=21&gp=0.jpg");
+        image2.setUrl("https://img.gtsuat.com/source/public/info/other/4.jpg");
         IndexLunboAdvBean image3 = new IndexLunboAdvBean();
-        image3.setUrl("http://npic7.edushi.com/cn/zixun/zh-chs/2015-09/09/4f4842aa50924e2bb6cedff42d09ef4a.png");
+        image3.setUrl("https://img.gtsuat.com/source/public/info/other/8.jpg");
         list.add(image);
         list.add(image2);
         list.add(image3);
