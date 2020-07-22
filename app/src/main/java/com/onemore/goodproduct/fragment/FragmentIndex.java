@@ -78,6 +78,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
     LoopViewPager mLoopViewPager;
     LinearLayout llviewpagerIndex;
     Button webSocket;
+    Button MyDragGridView;
 
     protected MainAdapter mAdapter;
     protected List<IndexBean.DatasBean> mDataList;
@@ -137,14 +138,16 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
         refreshLayout.setOnRefreshListener(mRefreshListener); // 刷新监听。
         mRecyclerView.setLoadMoreListener(mLoadMoreListener); // 加载更多的监听。
-        headView=getActivity().getLayoutInflater().inflate(R.layout.including_head_index,null);
-        webSocket=headView.findViewById(R.id.webSocket);
-        mLoopViewPager=headView.findViewById(R.id.mLoopViewPager);
-        llviewpagerIndex=headView.findViewById(R.id.llviewpagerIndex);
+        headView = getActivity().getLayoutInflater().inflate(R.layout.including_head_index, null);
+        webSocket = headView.findViewById(R.id.webSocket);
+        MyDragGridView = headView.findViewById(R.id.DragGridView);
+        mLoopViewPager = headView.findViewById(R.id.mLoopViewPager);
+        llviewpagerIndex = headView.findViewById(R.id.llviewpagerIndex);
         mRecyclerView.addHeaderView(headView);
         mRecyclerView.setAdapter(mAdapter);
 
         webSocket.setOnClickListener(this);
+        MyDragGridView.setOnClickListener(this);
 
         //图片集合，从后台直接返回，前端接收
         initMyPageAdapter(list);
@@ -171,9 +174,12 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
     @Override
     public void widgetClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.webSocket:
                 ActivityManagers.WebSocketActivity(getActivity());
+                break;
+            case R.id.DragGridView:
+                ActivityManagers.MyDragGridViewActivity(getActivity());
                 break;
         }
     }
@@ -213,7 +219,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
                     // notifyItemRangeInserted()或者notifyDataSetChanged().
 //                    mAdapter.notifyItemRangeInserted(mDataList.size() - strings.size(), strings.size());
-                // 请求数据，并更新数据源操作。
+                    // 请求数据，并更新数据源操作。
                     mAdapter.notifyDataSetChanged();
                     // 数据完更多数据，一定要调用这个方法。
                     // 第一个参数：表示此次数据是否为空。
@@ -248,8 +254,8 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
     @Override
     public void MVPSuccess(Object data) {
 
-        IndexBean mindexBean= (IndexBean) data;
-        mDataList=mindexBean.getDatas();
+        IndexBean mindexBean = (IndexBean) data;
+        mDataList = mindexBean.getDatas();
         MyLog.i(TAG, "MVPSuccess=" + mDataList.toString());
         mAdapter.notifyDataSetChanged(mDataList);
         mRecyclerView.loadMoreFinish(false, true);
@@ -312,6 +318,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
             }
         };
     }
+
     /***
      * 初始化viewpager适配器
      *

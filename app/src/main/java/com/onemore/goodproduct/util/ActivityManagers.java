@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 
 import com.onemore.goodproduct.acitivity.WebSocketActivity;
+import com.onemore.goodproduct.channel.ChannelActivity;
+import com.onemore.goodproduct.channel.DragActivity;
 
 /**
  * des:
@@ -15,5 +17,8 @@ public class ActivityManagers {
 
     public static void WebSocketActivity(FragmentActivity activity) {
         activity.startActivity(new Intent(activity , WebSocketActivity.class));
+    }
+    public static void MyDragGridViewActivity(FragmentActivity activity) {
+        activity.startActivity(new Intent(activity , ChannelActivity.class));
     }
 }

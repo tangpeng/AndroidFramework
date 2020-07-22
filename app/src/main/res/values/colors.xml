@@ -79,5 +79,10 @@
     <color name="common_grading">#585858</color>
     <color name="common_grad">#FAFAFA</color>
 
+    <color name="tip">#9c9c9c</color>
+    <color name="bg_focus">#DDDDDD</color>
+    <color name="red_500">#ef4836</color>
+
+
 
 </resources>

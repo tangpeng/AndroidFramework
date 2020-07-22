@@ -39,5 +39,13 @@
         android:text="websocket"
         android:textColor="@color/black"
         android:textSize="20dp" />
+    <Button
+        android:id="@+id/DragGridView"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_margin="20dp"
+        android:text="今日头条栏目拖拽"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
 
 </LinearLayout>
