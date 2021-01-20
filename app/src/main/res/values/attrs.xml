@@ -70,4 +70,146 @@
         <attr name="stroke_width" format="integer|dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="TintView">
+        <attr name="click_type">
+            <enum name="CLICK_TYPE" value="0" />
+            <enum name="CHECK_TYPE" value="1" />
+            <enum name="BOTH_TYPE" value="2" />
+        </attr>
+        <attr name="bg_normal_color" format="reference|color" />
+        <attr name="bg_select_color" format="reference|color" />
+        <attr name="text_normal_color" format="reference|color" />
+        <attr name="text_select_color" format="reference|color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text_title" format="string" />
+        <attr name="text_bold" format="boolean" />
+        <attr name="image_normal_color" format="reference|color" />
+        <attr name="image_select_color" format="reference|color" />
+        <attr name="image_select" format="reference" />
+        <attr name="image_src" format="reference" />
+        <attr name="image_padding" format="dimension" />
+        <attr name="image_direction" format="integer" />
+    </declare-styleable>
+
+
+    <!--自定义下拉上拉刷新控件属性，state_end状态下文案-->
+    <declare-styleable name="XRecyclerView">
+        <attr name="footer_end_title" format="string" />
+
+    </declare-styleable>
+
+    <!--自定义下拉上拉刷新控件属性，state_end状态下文案-->
+    <declare-styleable name="LoadingView">
+        <attr name="scale" format="integer" />
+
+    </declare-styleable>
+
+    <!--自定义tab控件-->
+    <declare-styleable name="CheckBoxView">
+        <attr name="bg" format="reference|color" />
+        <attr name="item_bg" format="reference|color" />
+        <attr name="left_title" format="string" />
+        <attr name="right_title" format="string" />
+        <attr name="title_normal_color" format="reference|color" />
+        <attr name="title_select_color" format="reference|color" />
+    </declare-styleable>
+
+    <!--时间选择器-->
+    <declare-styleable name="PickerView">
+
+        <attr name="isLoop" format="boolean" />
+
+    </declare-styleable>
+
+    <!-- SlidingMenu -->
+    <item name="selected_view" type="id" />
+    <declare-styleable name="SlidingMenu">
+        <attr name="mode">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="viewAbove" format="reference" />
+        <attr name="viewBehind" format="reference" />
+        <attr name="behindOffset" format="dimension" />
+        <attr name="behindWidth" format="dimension" />
+        <attr name="behindScrollScale" format="float" />
+        <attr name="touchModeAbove">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="touchModeBehind">
+            <enum name="margin" value="0" />
+            <enum name="fullscreen" value="1" />
+        </attr>
+        <attr name="shadowDrawable" format="reference" />
+        <attr name="shadowWidth" format="dimension" />
+        <attr name="fadeEnabled" format="boolean" />
+        <attr name="fadeDegree" format="float" />
+        <attr name="selectorEnabled" format="boolean" />
+        <attr name="selectorDrawable" format="reference" />
+    </declare-styleable>
+
+    <!--<declare-styleable name="CircleImageView">-->
+    <!--<attr name="border_width" format="dimension" />-->
+    <!--<attr name="border_color" format="color" />-->
+    <!--</declare-styleable>-->
+
+
+
+    <declare-styleable name="RedTipTextView">
+        <attr name="redTipsVisibility">
+            <enum name="invisible" value="0"></enum>
+            <enum name="visible" value="1"></enum>
+            <enum name="gone" value="2"></enum>
+        </attr>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="LottieAnimationView">
+        <attr name="lottie_fileName" format="string" />
+        <attr name="lottie_rawRes" format="reference" />
+        <attr name="lottie_url" format="string" />
+        <attr name="lottie_fallbackRes" format="reference" />
+        <attr name="lottie_autoPlay" format="boolean" />
+        <attr name="lottie_loop" format="boolean" />
+        <attr name="lottie_repeatMode" format="enum">
+            <enum name="restart" value="1" />
+            <enum name="reverse" value="2" />
+        </attr>
+        <attr name="lottie_repeatCount" format="integer" />
+        <attr name="lottie_imageAssetsFolder" format="string" />
+        <attr name="lottie_progress" format="float" />
+        <attr name="lottie_enableMergePathsForKitKatAndAbove" format="boolean" />
+        <attr name="lottie_colorFilter" format="color" />
+        <attr name="lottie_scale" format="float" />
+        <attr name="lottie_scale2" format="float" />
+        <attr name="lottie_margin2" format="integer" />
+        <attr name="lottie_marginl" format="integer" />
+        <attr name="lottie_margint" format="integer" />
+        <attr name="netlayout_width" format="dimension"/>
+        <attr name="netlayout_height" format="dimension"/>
+        <attr name="netlayout_scaletype" format="integer"/>
+
+        <attr name="lottie_speed" format="float" />
+        <!-- These values must be kept in sync with the RenderMode enum -->
+        <attr name="lottie_renderMode" format="enum">
+            <enum name="automatic" value="0" />
+            <enum name="hardware" value="1" />
+            <enum name="software" value="2" />
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="BoldEditText">
+        <attr name="select_bold" format="boolean" />
+        <attr name="hintSize" format="dimension" />
+        <attr name="inputSize" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingProgress">
+        <attr name="text_message" format="string" />
+    </declare-styleable>
+
+
 </resources>

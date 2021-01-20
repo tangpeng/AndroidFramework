@@ -1,7 +1,6 @@
 package com.onemore.goodproduct.fragment;
 
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
@@ -9,54 +8,33 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-import com.google.gson.reflect.TypeToken;
+import com.gw.library.Logger;
 import com.onemore.goodproduct.R;
-import com.onemore.goodproduct.acitivity.WebSocketActivity;
 import com.onemore.goodproduct.adapter.IndexLunboAdapter;
 import com.onemore.goodproduct.adapter.MainAdapter;
 import com.onemore.goodproduct.bean.IndexBean;
-import com.onemore.goodproduct.bean.IndexListBean;
 import com.onemore.goodproduct.bean.IndexLunboAdvBean;
-import com.onemore.goodproduct.bean.IndexLunboBean;
 import com.onemore.goodproduct.mvpview.MvpUserActivityView;
 import com.onemore.goodproduct.presenter.impl.UserPresenter;
 import com.onemore.goodproduct.util.ActivityManagers;
-import com.onemore.goodproduct.util.GsonTools;
-import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
 import com.onemore.goodproduct.view.LoopViewPager;
 import com.onemore.goodproduct.view.TitleBarView;
 import com.yanzhenjie.recyclerview.swipe.SwipeItemClickListener;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
 import com.yanzhenjie.recyclerview.swipe.widget.DefaultItemDecoration;
-import com.zhouyou.http.EasyHttp;
-import com.zhouyou.http.callback.SimpleCallBack;
-import com.zhouyou.http.exception.ApiException;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-
-import static android.R.id.list;
 
 /**
  * state：首页
@@ -77,8 +55,6 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
     private View headView;
     LoopViewPager mLoopViewPager;
     LinearLayout llviewpagerIndex;
-    Button webSocket;
-    Button MyDragGridView;
 
     protected MainAdapter mAdapter;
     protected List<IndexBean.DatasBean> mDataList;
@@ -139,15 +115,11 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
         refreshLayout.setOnRefreshListener(mRefreshListener); // 刷新监听。
         mRecyclerView.setLoadMoreListener(mLoadMoreListener); // 加载更多的监听。
         headView = getActivity().getLayoutInflater().inflate(R.layout.including_head_index, null);
-        webSocket = headView.findViewById(R.id.webSocket);
-        MyDragGridView = headView.findViewById(R.id.DragGridView);
         mLoopViewPager = headView.findViewById(R.id.mLoopViewPager);
         llviewpagerIndex = headView.findViewById(R.id.llviewpagerIndex);
         mRecyclerView.addHeaderView(headView);
         mRecyclerView.setAdapter(mAdapter);
 
-        webSocket.setOnClickListener(this);
-        MyDragGridView.setOnClickListener(this);
 
         //图片集合，从后台直接返回，前端接收
         initMyPageAdapter(list);
@@ -169,24 +141,18 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
     @Override
     public void onItemClick(View itemView, int position) {
+        ActivityManagers.ToWebActivity(getActivity(),mDataList.get(position).getLink());
         Tools.showToast(getActivity(), "第" + position + "个");
     }
 
     @Override
     public void widgetClick(View v) {
-        switch (v.getId()) {
-            case R.id.webSocket:
-                ActivityManagers.WebSocketActivity(getActivity());
-                break;
-            case R.id.DragGridView:
-                ActivityManagers.MyDragGridViewActivity(getActivity());
-                break;
-        }
+
     }
 
     @Override
     public void doBusiness() {
-        MyLog.i(TAG, "doBusiness");
+        Logger.i(TAG, "doBusiness");
         presenter.getIndexData(getActivity());
     }
 
@@ -256,7 +222,7 @@ public class FragmentIndex extends BaseFragment implements View.OnClickListener,
 
         IndexBean mindexBean = (IndexBean) data;
         mDataList = mindexBean.getDatas();
-        MyLog.i(TAG, "MVPSuccess=" + mDataList.toString());
+        Logger.i(TAG, "MVPSuccess=" + mDataList.toString());
         mAdapter.notifyDataSetChanged(mDataList);
         mRecyclerView.loadMoreFinish(false, true);
 

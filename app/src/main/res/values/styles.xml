@@ -190,4 +190,15 @@
         <item name="android:textSize">@dimen/size_30</item>
         <item name="android:textColorHint">@color/common_text_color_thin_bg</item>
     </style>
+
+    <style name="top_tab_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/height_a</item>
+    </style>
+
+    <style name="top_tab_divider_line_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/space_d</item>
+        <item name="android:background">@color/color_nav_line</item>
+    </style>
 </resources>

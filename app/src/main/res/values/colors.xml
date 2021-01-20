@@ -84,5 +84,150 @@
     <color name="red_500">#ef4836</color>
 
 
+    <!--所有页面的背景-->
+    <color name="color_a">#F5F6F7</color>
+    <!--页面默认色最常没作特别要求的字体,一级标题-->
+    <color name="color_b">#111E36</color>
+    <!--提示文字色及行情中文字，二级标题-->
+    <color name="color_c">#666D7F</color>
+    <!--所有下划线色，分线及点击行背景效果-->
+    <color name="color_d">#e6ebf5</color>
+    <!--tab背景，用到全白的文字及背景,图表弹出菜单字体色-->
+    <color name="color_e">#ffffff</color>
+    <!--除color_a外的内容背景，图表，tab背景-->
+    <color name="color_f">#F8F9FB</color>
+    <color name="color_fff8f9fb">#fff8f9fb</color>
+    <!--导航栏图片/字体点击色，汽泡挂单成交提示背景，交易选中背景-->
+    <color name="color_g">#c9effa</color>
+    <!--按钮字体不可选状态，三级标题,其它浅色字-->
+    <color name="color_h">#878C9C</color>
+    <!--用到风格色字体色（标签栏，左菜单点击，tab字）按钮背景，风格色图色-->
+    <color name="color_k">#2064DA</color>
+    <!--按钮背景点击,风格字点击色-->
+    <color name="color_l">#2064DA</color>
+    <!--气泡提示背景,交易超出范围，成交失败字体色-->
+    <color name="color_p">#f75151</color>
+    <!--副标题文字色-->
+    <color name="color_v">#999999</color>
+
+    <!--绿涨-->
+    <color name="color_chart_a_alpha">#0F1AB878</color>
+    <!--红跌-->
+    <color name="color_chart_b_alpha">#0FFB2E3B</color>
+
+    <!--绿涨-->
+    <color name="color_chart_a">#1AB878</color>
+    <!--红跌-->
+    <color name="color_chart_b">#FB2E3B</color>
+    <!--不涨不跌灰-->
+    <color name="color_chart_c">#9E9E9E</color>
+
+
+    <!--分时K线底边线-->
+    <color name="color_chart_k">#ececec</color>
+    <!--导航栏（头部）背景色-->
+    <color name="color_nav_bg">#ffffff</color>
+    <!--导航栏（头部）底边线色-->
+    <color name="color_nav_line">#e6ebf5</color>
+    <!--导航栏（头部）文字图片色-->
+    <color name="color_nav_font">#111E36</color>
+    <!--左菜单字体图片色-->
+    <color name="color_nav_font_p">#2064DA</color>
+    <!--导航栏（头部）中间标题字色-->
+    <color name="color_nav_title">#111E36</color>
+
+    <!--底部导航栏 tab背景色/边线色-->
+    <color name="color_navtab">#ffffff</color>
+    <!--底部导航栏tab底边线色-->
+    <color name="color_navtab_p">#D02222</color>
+    <color name="color_navtab_line">#ffffff</color>
+    <!--底部导航栏tab文字图片色-->
+    <color name="color_navtab_font">#656D7F</color>
+    <!--底部导航栏tab文字图片点击色-->
+    <color name="color_navtab_font_p">#D02222</color>
+
+    <!-- 网页界面账号被锁-->
+    <color name="color_contact_a">#f4876a</color>
+
+    <!-- 图表tab背景色-->
+    <color name="color_charttab_a">#c5e1f3</color>
+
+    <!--标签栏（底部菜单）背景-->
+    <color name="color_tabbar_bg">#ffffff</color>
+    <!--标签栏（底部菜单）底边线色-->
+    <color name="color_tabbar_line">#e0e0e0</color>
+
+    <!--状态栏背景色-->
+    <color name="color_p_35">#FFE6E8</color>
+
+    <color name="color_index_head">#0343B4</color>
+
+
+    <!--========================antony 新增======================-->
+    <!--夜间模式-->
+    <color name="color_night_bg">#141E30</color>
+    <color name="color_night_bg_d">#0E1624</color>
+    <color name="color_night_bg_dark">#141E30</color>
+    <color name="color_night_btn_bg_dark">#172338</color>
+    <color name="color_night_btn_text">#A3ABB8</color>
+    <color name="color_night_text">#A3ABB8</color>
+    <color name="color_night_line">#2E3A4F</color>
+    <color name="color_night_position_bg">#152746</color>
+    <color name="color_night_line_bg">#273143</color>
+    <color name="color_night_head_position_bg">#152746</color>
+    <color name="color_chart_line_bg">#D8DCE3</color>
+
+    <color name="color_333333">#111E36</color>
+    <color name="color_666666">#666D7F</color>
+    <color name="color_999999">#878C9C</color>
+    <color name="color_F2F2F2">#F2F2F2</color>
+
+    <color name="color_657081">#657081</color>
+    <color name="color_ff3b30">#ff3b30</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_00000000">#00000000</color>
+    <color name="color_14000000">#14000000</color>
+    <color name="color_F5F6F7">#F5F6F7</color>
+    <color name="color_4D8CF5">#4D8CF5</color>
+
+
+    <!--首页 红包 -->
+    <!--任务中心-->
+    <color name="color_FF008BDC">#FF008BDC</color>
+    <color name="color_119CFE">#119CFE</color>
+
+    <color name="color_common_deep">#142D58</color>
+
+
+    <color name="color_111E36">#111E36</color>
+    <color name="color_A3A7B2">#A3A7B2</color>
+    <color name="color_878C9C">#878C9C</color>
+    <color name="color_A2A5B3">#A2A5B3</color>
+    <color name="color_808595">#808595</color>
+    <color name="color_121E36">#121E36</color>
+
+    <color name="color_f6a220">#F6A220</color>
+    <color name="color_f85959">#F85959</color>
+    <!--<color name="color_E86238">#E86238</color>-->
+    <color name="color_E86238">#FB2E3B</color>
+
+    <!--<color name="color_3EB87D">#3EB87D</color>-->
+    <color name="color_3EB87D">#1BC07D</color>
+
+
+    <color name="color_C1C4CE">#C1C4CE</color>
+    <color name="color_DCE2EB">#DCE2EB</color>
+    <color name="color_61718E">#61718E</color>
+    <color name="color_A6AEBD">#A6AEBD</color>
+    <color name="color_ff4d8cf5">#ff4d8cf5</color>
+    <color name="color_ff142d58">#ff142d58</color>
+    <color name="color_ffa6aebd">#ffa6aebd</color>
+    <color name="color_common_light">#AFB8C7</color>
+    <color name="color_838EA0">#838EA0</color>
+
+    <color name="color_common_normal">#A6AEBD</color>
+    <color name="color_F5F7FB">#F5F7FB</color>
+    <color name="color_747E8F">#747E8F</color>
+    <color name="color_DBE0EE">#DBE0EE</color>
 
 </resources>

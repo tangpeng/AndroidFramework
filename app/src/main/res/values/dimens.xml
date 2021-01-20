@@ -19,7 +19,47 @@
     <dimen name="size_22">11sp</dimen>
     <dimen name="size_20">10sp</dimen>
     <dimen name="size_18">9sp</dimen>
+    <dimen name="font_e">12sp</dimen>
 
+    <!--顶部导航跟上面的高度-->
+    <dimen name="toolbar_top_space">0dp</dimen>
     <!-- body content -->
+    <!--导航栏（头部）高,系统每行高-->
+    <dimen name="height_a">44dp</dimen>
+    <!--标签栏（底部菜单）-->
+    <dimen name="height_b">50dp</dimen>
+    <!--输入框大小-->
+    <dimen name="height_c">34dp</dimen>
+    <!--tab高,默认行高-->
+    <dimen name="height_d">44dp</dimen>
+    <!--行情列高-->
+    <dimen name="height_e">60dp</dimen>
+    <!--按钮高，左菜单行高-->
+    <dimen name="height_f">48dp</dimen>
+    <!--持仓高-->
+    <dimen name="height_k">100dp</dimen>
+    <dimen name="height_k_new">180dp</dimen>
+    <dimen name="font_b_px">16px</dimen>
+
+
+    <!--页面左右间距，字与图片间距-->
+    <dimen name="space_font">4dp</dimen>
+    <!--页面左右间距，字与图片间距-->
+    <dimen name="space_a">12dp</dimen>
+    <!--上面-->
+    <dimen name="space_b">24dp</dimen>
+    <!--较小的间距-->
+    <dimen name="space_c">6dp</dimen>
+    <!--线高-->
+    <dimen name="space_d">2px</dimen>
+    <!--选中底边线高（持仓）-->
+    <dimen name="space_e">2dp</dimen>
+    <!--首页和我的页面间隔条高度-->
+    <dimen name="space_g">10dp</dimen>
+    <dimen name="space_8dp">8dp</dimen>
+    <!--较大-->
+    <dimen name="space_h">16dp</dimen>
+    <dimen name="font_a">18sp</dimen>
+
 
 </resources>

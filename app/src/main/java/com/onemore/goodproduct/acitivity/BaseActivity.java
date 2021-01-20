@@ -6,20 +6,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gw.library.Logger;
 import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.util.CommonUtil;
-import com.onemore.goodproduct.util.MyLog;
-import com.onemore.goodproduct.util.StatusBarUtilLocal;
 import com.onemore.goodproduct.view.TitleBarView;
 
 import butterknife.ButterKnife;
@@ -41,7 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     public Context mContext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        MyLog.i(TAG, "BaseActivity()+onCreate");
+        Logger.i(TAG, "BaseActivity()+onCreate");
         Bundle bundle = getIntent().getExtras();
         initParms(bundle);
         super.onCreate(savedInstanceState);
@@ -162,13 +155,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
             CommonUtil.HideKeyboard(mTitleBarView);
             this.finish();
-            MyLog.i(TAG, "onKeyDown");
+            Logger.i(TAG, "onKeyDown");
         }
         return false;
     }
 
     public void clickRetrun(View v) {
-        MyLog.i(TAG, "clickRetrun");
+        Logger.i(TAG, "clickRetrun");
         CommonUtil.HideKeyboard(v);
         finish();
     }
@@ -193,7 +186,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onRestart() {
         super.onRestart();
-        MyLog.d(TAG, "onRestart()");
+        Logger.d(TAG, "onRestart()");
     }
 
     @Override
@@ -204,7 +197,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onResume() {
         super.onResume();
-        MyLog.d(TAG, "onResume()");
+        Logger.d(TAG, "onResume()");
 
     }
 
@@ -221,7 +214,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        MyLog.d(TAG, "BaseActivity()+onDestroy()");
+        Logger.d(TAG, "BaseActivity()+onDestroy()");
 
     }
 

@@ -22,10 +22,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
+import com.gw.library.Logger;
 import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.bean.IndexBean;
-import com.onemore.goodproduct.bean.IndexListBean;
-import com.onemore.goodproduct.util.MyLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +43,7 @@ public class MainAdapter extends BaseAdapter<MainAdapter.ViewHolder> {
     @Override
     public void notifyDataSetChanged(Object dataList) {
         this.mDataList = (List<IndexBean.DatasBean>) dataList;
-        MyLog.i(TAG,"mDataList="+mDataList.size());
+        Logger.i(TAG,"mDataList="+mDataList.size());
         super.notifyDataSetChanged();
     }
 
@@ -61,7 +60,7 @@ public class MainAdapter extends BaseAdapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        MyLog.i(TAG,"TAG="+mDataList.get(position).getTitle());
+        Logger.i(TAG,"TAG="+mDataList.get(position).getTitle());
         holder.setData(mDataList.get(position).getTitle());
     }
 

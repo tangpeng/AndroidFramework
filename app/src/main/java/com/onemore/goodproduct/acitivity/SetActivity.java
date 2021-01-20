@@ -1,6 +1,5 @@
 package com.onemore.goodproduct.acitivity;
 
-import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -11,22 +10,19 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.apeng.permissions.EsayPermissions;
 import com.apeng.permissions.OnPermission;
 import com.apeng.permissions.Permission;
 import com.bumptech.glide.Glide;
+import com.gw.library.Logger;
 import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.util.CleanMessageUtil;
-import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
 
 import java.util.List;
 
 import butterknife.BindView;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Consumer;
 
 
 /**
@@ -59,7 +55,7 @@ public class SetActivity extends BaseActivity {
 
     @Override
     public void initData(Context mContext) {
-        MyLog.i(TAG, "initData");
+        Logger.i(TAG, "initData");
         try {
             tvUserCache.setText(CleanMessageUtil.getTotalCacheSize(context) + "");
         } catch (Exception e) {

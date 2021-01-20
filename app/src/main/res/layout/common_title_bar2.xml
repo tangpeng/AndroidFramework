@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/title_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/system_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_top_space"
+        android:background="?colorPrimaryDark"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/app_title_bar"
+        style="@style/top_tab_layout_style">
+
+        <com.onemore.goodproduct.view.TintImageTextView
+            android:id="@+id/title_left_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="16dp"
+            custom:image_direction="3"
+            custom:image_src="@mipmap/a_nav_back"
+            custom:text_normal_color="@color/color_nav_font"
+            custom:text_select_color="@color/color_nav_font_p"
+            custom:text_size="@dimen/font_b_px" />
+
+        <ImageView
+            android:id="@+id/left_tip_icon"
+            android:layout_width="@dimen/space_c"
+            android:layout_height="@dimen/space_c"
+            android:layout_marginLeft="38dp"
+            android:layout_marginTop="13dp"
+            android:background="@drawable/common_red_bg"
+            android:scaleType="fitXY"
+            android:visibility="gone" />
+
+
+        <!--左侧第二个（夜间模式按钮）-->
+        <com.onemore.goodproduct.view.TintImageView
+            android:id="@+id/title_left_secondary_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/title_left_btn"
+            android:visibility="gone" />
+
+        <!--右侧第一个-->
+        <com.onemore.goodproduct.view.TintImageTextView
+            android:id="@+id/title_right_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:gravity="right|center_vertical"
+            android:paddingRight="16dp"
+            android:visibility="gone"
+            custom:text_bold="true"
+            custom:image_direction="4"
+            custom:image_padding="@dimen/space_c"
+            custom:text_normal_color="@color/color_nav_font"
+            custom:text_select_color="@color/color_nav_font_p"
+            custom:text_size="@dimen/font_b_px" />
+
+        <!--右侧第二个-->
+        <com.onemore.goodproduct.view.TintImageTextView
+            android:id="@+id/title_right_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/title_right_btn"
+            android:background="@android:color/transparent"
+            android:visibility="gone"
+            android:paddingRight="12dp"
+            custom:text_bold="true"
+            custom:image_direction="3"
+            custom:text_normal_color="@color/color_nav_font"
+            custom:text_select_color="@color/color_nav_font_p"
+            custom:text_size="@dimen/font_b_px" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp">
+
+            <TextView
+                android:id="@+id/app_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:textColor="@color/color_nav_title"
+                android:textSize="@dimen/font_a"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/title_divider"
+            style="@style/top_tab_divider_line_style"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+</LinearLayout>

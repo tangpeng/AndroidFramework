@@ -3,9 +3,8 @@ package com.onemore.goodproduct.presenter.impl;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.util.Log;
-import android.view.View;
 
+import com.gw.library.Logger;
 import com.onemore.goodproduct.bean.IndexBean;
 import com.onemore.goodproduct.bean.IndexListBean;
 import com.onemore.goodproduct.constant.ComParamContact;
@@ -13,13 +12,10 @@ import com.onemore.goodproduct.model.AuthModel;
 import com.onemore.goodproduct.mvpview.MvpUserActivityView;
 import com.onemore.goodproduct.presenter.BasePresenter;
 import com.onemore.goodproduct.util.MD5;
-import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.callback.ProgressDialogCallBack;
-import com.zhouyou.http.callback.SimpleCallBack;
 import com.zhouyou.http.exception.ApiException;
-import com.zhouyou.http.model.ApiResult;
 import com.zhouyou.http.subsciber.IProgressDialog;
 
 import java.util.List;
@@ -145,19 +141,19 @@ public class UserPresenter extends BasePresenter {
         };
         EasyHttp.get(ComParamContact.ARTICLE_LIST)
 //                .params(ComParamContact.Register.ACCOUNT, mobile)
-                .baseUrl("http://www.wanandroid.com")
+//                .baseUrl("https://www.wanandroid.com")
                 .sign(false)
                 .timeStamp(false)
                 .execute(new ProgressDialogCallBack<IndexBean>(mProgressDialog, true, true) {
                     @Override
                     public void onError(ApiException e) {
                         super.onError(e);
-                        MyLog.i(TAG, "e=" + e.getMessage());
+                        Logger.i(TAG, "e=" + e.getMessage());
                     }
 
                     @Override
                     public void onSuccess(IndexBean Object) {
-                        MyLog.i(TAG, "ApiResult=" + Object.toString());
+                        Logger.i(TAG, "ApiResult=" + Object.toString());
                         activityView.MVPSuccess(Object);
                     }
                 });
@@ -177,19 +173,19 @@ public class UserPresenter extends BasePresenter {
         };
         EasyHttp.get(ComParamContact.INDEXPATH)
 //                .params(ComParamContact.Register.ACCOUNT, mobile)
-                .baseUrl("http://www.wanandroid.com")
+//                .baseUrl("https://www.wanandroid.com")
                 .sign(false)
                 .timeStamp(false)
                 .execute(new ProgressDialogCallBack<List<IndexListBean>>(mProgressDialog, true, true) {
                     @Override
                     public void onError(ApiException e) {
                         super.onError(e);
-                        MyLog.i(TAG, "e=" + e.getMessage());
+                        Logger.i(TAG, "e=" + e.getMessage());
                     }
 
                     @Override
                     public void onSuccess(List<IndexListBean> Object) {
-                        MyLog.i(TAG, "mIndexListBean=" + Object.get(0).getTitle().toString());
+                        Logger.i(TAG, "mIndexListBean=" + Object.get(0).getTitle().toString());
                         activityView.MVPSuccess(Object);
                     }
                 });

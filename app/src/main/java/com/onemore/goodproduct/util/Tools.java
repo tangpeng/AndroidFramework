@@ -29,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.gw.library.Logger;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -192,7 +193,7 @@ public class Tools {
         Resources resources = context.getResources();
         int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
         int height = resources.getDimensionPixelSize(resourceId);
-        MyLog.v("dbw", "Status height:" + height);
+        Logger.i("dbw", "Status height:" + height);
         return height;
     }
 

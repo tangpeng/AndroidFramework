@@ -216,4 +216,13 @@
     <string name="other_channel">其他频道</string>
     <string name="edit">编辑</string>
     <string name="finish">完成</string>
+
+    <string name="btn_back">返回</string>
+    <!-- 错误提示 -->
+    <string name="http_url_format" formatted="false">%s%s%s</string>
+    <string name="no_network_error3">哎呀，网络竟然不稳定</string>
+    <string name="no_network_btn">刷新重试</string>
+    <string name="no_network_error">网络正在开小差，请重新试试</string>
+    <string name="no_network_error2">当前网络不可用，请检查你的网络设置</string>
+
 </resources>

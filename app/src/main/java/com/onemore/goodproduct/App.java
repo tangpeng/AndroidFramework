@@ -6,7 +6,9 @@ import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
 import com.bumptech.glide.request.target.ViewTarget;
+import com.gw.library.Logger;
 import com.onemore.goodproduct.constant.AppConstant;
+import com.onemore.goodproduct.handler.CrashHandler;
 import com.onemore.goodproduct.util.SystemInfoUtils;
 import com.zhouyou.http.EasyHttp;
 import com.zhouyou.http.cache.converter.SerializableDiskConverter;
@@ -19,6 +21,8 @@ import java.util.List;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
+
+import okhttp3.logging.HttpLoggingInterceptor;
 
 
 /**
@@ -44,6 +48,10 @@ public class App extends MultiDexApplication {
         applicationContext = this;
         instance = this;
 
+        if (BuildConfig.BUILD_TYPE.equals("release")) {
+            Logger.disableLogger();
+        }
+
         /**
          * 当出现异常，退出app
          *  * UncaughtException处理类,当程序发生Uncaught异常的时候,有该类来接管程序,并记录发送错误报告.
@@ -51,10 +59,8 @@ public class App extends MultiDexApplication {
 //        CrashHandler crashHandler = CrashHandler.getInstance();
 //        crashHandler.init(getApplicationContext());
 
-        //这里涉及到安全我把url去掉了，demo都是调试通的
-        String Url = "http://www.xxx.com";
+        String Url = "https://www.wanandroid.com";
         EasyHttp.init(this);
-
         //设置请求头
         HttpHeaders headers = new HttpHeaders();
         headers.put("User-Agent", SystemInfoUtils.getUserAgent(this, AppConstant.APPID));

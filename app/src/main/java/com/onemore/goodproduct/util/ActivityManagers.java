@@ -3,6 +3,7 @@ package com.onemore.goodproduct.util;
 import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 
+import com.onemore.goodproduct.acitivity.NewsDetailActivity;
 import com.onemore.goodproduct.acitivity.WebSocketActivity;
 import com.onemore.goodproduct.channel.ChannelActivity;
 import com.onemore.goodproduct.channel.DragActivity;
@@ -20,5 +21,9 @@ public class ActivityManagers {
     }
     public static void MyDragGridViewActivity(FragmentActivity activity) {
         activity.startActivity(new Intent(activity , ChannelActivity.class));
+    }
+
+    public static void ToWebActivity(FragmentActivity activity, String link) {
+        activity.startActivity(new Intent(activity , NewsDetailActivity.class).putExtra("url",link));
     }
 }

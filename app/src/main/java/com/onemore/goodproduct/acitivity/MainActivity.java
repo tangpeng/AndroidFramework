@@ -14,12 +14,12 @@ import android.widget.TextView;
 import com.apeng.permissions.EsayPermissions;
 import com.apeng.permissions.OnPermission;
 import com.apeng.permissions.Permission;
+import com.gw.library.Logger;
 import com.onemore.goodproduct.R;
 import com.onemore.goodproduct.fragment.FragmentFind;
 import com.onemore.goodproduct.fragment.FragmentIndex;
 import com.onemore.goodproduct.fragment.FragmentMe;
 import com.onemore.goodproduct.util.Constans;
-import com.onemore.goodproduct.util.MyLog;
 import com.onemore.goodproduct.util.Tools;
 import com.onemore.goodproduct.view.TitleBarView;
 
@@ -126,7 +126,7 @@ public class MainActivity extends BaseActivity {
      * 选择跳转到某个fragment
      */
     void selectFragment(int returnType) {
-        MyLog.i(TAG, "returnType=" + returnType);
+        Logger.i(TAG, "returnType=" + returnType);
         if (returnType == 2) {
             setChioceItem(2);
         } else if (returnType == 1) {
@@ -151,9 +151,9 @@ public class MainActivity extends BaseActivity {
                 if (mFragmentIndex == null) {
                     mFragmentIndex = new FragmentIndex();
                     transaction.add(R.id.content, mFragmentIndex);
-                    MyLog.i(TAG, "new FragmentIndex()");
+                    Logger.i(TAG, "new FragmentIndex()");
                 } else {
-                    MyLog.i(TAG, "transaction.show(mFragmentIndex);");
+                    Logger.i(TAG, "transaction.show(mFragmentIndex);");
                     transaction.show(mFragmentIndex);
                 }
 
@@ -167,7 +167,7 @@ public class MainActivity extends BaseActivity {
                 } else {
                     transaction.show(mFragmentFind);
                 }
-                MyLog.i(TAG, "剧组通告");
+                Logger.i(TAG, "剧组通告");
                 break;
             case 2:
                 ivMainMe.setImageResource(R.drawable.ic_nav_wd_pressed);
@@ -178,7 +178,7 @@ public class MainActivity extends BaseActivity {
                 } else {
                     transaction.show(mFragmentMe);
                 }
-                MyLog.i(TAG, "我的");
+                Logger.i(TAG, "我的");
                 break;
         }
         transaction.commit();
@@ -224,7 +224,7 @@ public class MainActivity extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == Constans.RESULT_OK) {
-            MyLog.i(TAG, "mian");
+            Logger.i(TAG, "mian");
             fManager = getSupportFragmentManager();
             switch (requestCode) {
                 case Constans.FRAGINDEX:
@@ -253,7 +253,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        MyLog.i(TAG, "onNewIntent");
+        Logger.i(TAG, "onNewIntent");
         selectFragment(intent.getIntExtra("Fragment", 0));
     }
 

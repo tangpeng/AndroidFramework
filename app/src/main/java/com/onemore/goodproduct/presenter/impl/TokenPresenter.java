@@ -5,12 +5,6 @@ import android.content.Context;
 
 import com.onemore.goodproduct.mvpview.MvpGetTokenView;
 import com.onemore.goodproduct.presenter.BasePresenter;
-import com.onemore.goodproduct.util.MyLog;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
 
 
 /**

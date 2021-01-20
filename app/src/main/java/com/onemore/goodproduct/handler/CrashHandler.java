@@ -13,8 +13,8 @@ import android.util.Log;
 import android.widget.Toast;
 
 
+import com.gw.library.Logger;
 import com.onemore.goodproduct.acitivity.MainActivity;
-import com.onemore.goodproduct.util.MyLog;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -79,15 +79,15 @@ public class CrashHandler implements UncaughtExceptionHandler {
 	@Override
 	public void uncaughtException(Thread thread, Throwable ex) {
 		if (!handleException(ex) && mDefaultHandler != null) {
-			MyLog.i(TAG, "if ");
+			Logger.i(TAG, "if ");
 			//如果用户没有处理则让系统默认的异常处理器来处理
 			mDefaultHandler.uncaughtException(thread, ex);
 		} else {
-			MyLog.i(TAG, "else");
+            Logger.i(TAG, "else");
 			try {
 				Thread.sleep(2000);
 			} catch (InterruptedException e) {
-				MyLog.i(TAG, "error : "+ e);
+                Logger.i(TAG, "error : "+ e);
 			}
 			Intent intent = new Intent(mContext, MainActivity.class);
 			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

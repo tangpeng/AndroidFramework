@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidFramework.iml" filepath="$PROJECT_DIR$/AndroidFramework.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/recyclerview-swipe/recyclerview-swipe.iml" filepath="$PROJECT_DIR$/recyclerview-swipe/recyclerview-swipe.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rxeasyhttp/rxeasyhttp.iml" filepath="$PROJECT_DIR$/rxeasyhttp/rxeasyhttp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidFramework.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidFramework.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/AndroidFramework.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/AndroidFramework.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recyclerview-swipe/AndroidFramework.recyclerview-swipe.iml" filepath="$PROJECT_DIR$/.idea/modules/recyclerview-swipe/AndroidFramework.recyclerview-swipe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rxeasyhttp/AndroidFramework.rxeasyhttp.iml" filepath="$PROJECT_DIR$/.idea/modules/rxeasyhttp/AndroidFramework.rxeasyhttp.iml" />
     </modules>
   </component>
 </project>

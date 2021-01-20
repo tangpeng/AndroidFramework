@@ -27,7 +27,7 @@ import android.view.WindowManager;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
-import com.onemore.goodproduct.util.MyLog;
+import com.gw.library.Logger;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
@@ -142,7 +142,7 @@ public class LoopViewPager extends ViewPager {
             int realPosition = position;
             if (mAdapter != null) {
                 realPosition = mAdapter.toRealPosition(position);
-                MyLog.i(TAG,"realPosition="+realPosition);
+                Logger.i(TAG,"realPosition="+realPosition);
                 if (positionOffset == 0
                         && mPreviousOffset == 0
                         && (position == 0 || position == mAdapter.getCount() - 1)) {
@@ -168,7 +168,7 @@ public class LoopViewPager extends ViewPager {
 
         @Override
         public void onPageScrollStateChanged(int state) {
-            MyLog.i(TAG,"state="+state);
+            Logger.i(TAG,"state="+state);
             switch (state) {
                 case SCROLL_STATE_DRAGGING:
                     if (isAutoLoop.get()) {
