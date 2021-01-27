@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.gw.library.Logger;
 import com.onemore.goodproduct.constant.AppConstant;
@@ -48,9 +49,14 @@ public class App extends MultiDexApplication {
         applicationContext = this;
         instance = this;
 
-        if (BuildConfig.BUILD_TYPE.equals("release")) {
-            Logger.disableLogger();
+
+        if(BuildConfig.DEBUG){
+            // 日志开启        
+             ARouter.openLog();
+            Logger.ableLogger();
+            //  调试模式开启，如果在install run模式下运行，则必须开启调试模式        ARouter.openDebug();    }    
         }
+        ARouter.init(this);
 
         /**
          * 当出现异常，退出app
@@ -141,4 +147,10 @@ public class App extends MultiDexApplication {
         }
     }
 
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        ARouter.getInstance().destroy( );
+    }
 }

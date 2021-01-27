@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { arguments = [AROUTER_MODULE_NAME:project.getName()] } }
     }
     buildTypes {
         release {
@@ -49,4 +50,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
     implementation 'com.squareup.okhttp3:mockwebserver:3.8.1'
 
+
+//    compile 'com.alibaba:arouter-api:1.4.0'
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
 }

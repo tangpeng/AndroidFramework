@@ -5,8 +5,14 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.gw.library.ARouterActivity;
+import com.gw.library.Module;
 import com.onemore.goodproduct.R;
 
 import java.util.Timer;
@@ -29,6 +35,7 @@ import okhttp3.WebSocketListener;
  * author:lucas tangpeng
  * date:2020-05-20 14:59
  */
+@Route(path = Module.MODULE_TWO)
 public class WebSocketActivity extends AppCompatActivity {
     public static final int LOOP = 2; // 处理消息循环
     public static final int SEND = 3; // 发送消息
@@ -70,25 +77,30 @@ public class WebSocketActivity extends AppCompatActivity {
     private static final long HEART_BEAT_RATE = 6000;
 
 
-    OkHttpClient mHttpClient=null;
-    Request mRequset=null;
+    OkHttpClient mHttpClient = null;
+    Request mRequset = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_socket);
         ButterKnife.bind(this);
-
+        ARouter.getInstance().inject(this);
         btn.setText("范德萨发了上课的");
 
-         mHttpClient = new OkHttpClient.Builder()
+        mHttpClient = new OkHttpClient.Builder()
                 .readTimeout(2, TimeUnit.SECONDS)
                 .writeTimeout(2, TimeUnit.SECONDS)
                 .connectTimeout(2, TimeUnit.SECONDS)
                 .build();
 
-         mRequset = new Request.Builder().url("ws://ixpe4.ecproxy4.com:8800/ws").build();
+        mRequset = new Request.Builder().url("ws://ixpe4.ecproxy4.com:8800/ws").build();
 
         initData();
+        String name = getIntent().getStringExtra("name")+"";
+        if (!TextUtils.isEmpty(name)) {
+            Toast.makeText(WebSocketActivity.this, name, Toast.LENGTH_LONG).show();
+        }
     }
 
     // 发送心跳包
@@ -99,7 +111,7 @@ public class WebSocketActivity extends AppCompatActivity {
                 if (webSocketInit != null) {
                     // Gecko 返回一个boolean 来告知当前连接是否依旧处于OPEN 状态 (同时也可以使用该返回值来判定数据是否已经被完全缓存或者传输);
                     webSocketInit.send(heartAction);
-                    Log.i("lucas","send");
+                    Log.i("lucas", "send");
                 }
                 sendTime = System.currentTimeMillis();
             }
@@ -121,6 +133,10 @@ public class WebSocketActivity extends AppCompatActivity {
     }
 
     private WebSocket webSocketInit;
+
+    public void onClickARouter(View view) {
+        ARouter.getInstance().build(Module.MODULE_ONE).withString("name", "lucas").navigation();
+    }
 
     class EchoWebSocketListener extends WebSocketListener {
         @Override
@@ -164,7 +180,7 @@ public class WebSocketActivity extends AppCompatActivity {
             t.printStackTrace();
 
             mHandler.removeCallbacksAndMessages(null);
-            mHandler=null;
+            mHandler = null;
             initData();
 //            Log.i("lucas", response.toString()+"-onFailure-"+t.toString());
         }

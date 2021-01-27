@@ -13,7 +13,7 @@ public class Logger {
     public static int DEBUG = 4;
     public static int VERBOS = 5;
     public static String TAG = "login_";
-    private static int LOG_LEVEL = 6;  //>6 打印所有日志
+    private static int LOG_LEVEL = 0;  //>6 打印所有日志
 
     public static void e(String tag, String msg) {
         if (LOG_LEVEL > ERROR) {
@@ -63,8 +63,8 @@ public class Logger {
         }
     }
 
-    public static void disableLogger() {
-        LOG_LEVEL = 0;
+    public static void ableLogger() {
+        LOG_LEVEL = 6;
     }
 
     public static void e(Throwable e) {

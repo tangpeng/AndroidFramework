@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.apeng.permissions.EsayPermissions;
 import com.apeng.permissions.OnPermission;
 import com.apeng.permissions.Permission;
@@ -84,6 +85,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initData(Context mContext) {
         fManager = getSupportFragmentManager();
+        ARouter.getInstance().inject(this);
     }
 
     @Override
